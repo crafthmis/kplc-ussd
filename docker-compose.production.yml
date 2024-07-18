@@ -1,0 +1,106 @@
+# docker-compose -f docker-production.yml up rails sidekiq
+version: "3.5"
+
+services:
+  app:  # &app
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+      args:
+          RUBY_VERSION: '2.7'
+          PG_MAJOR: '11'
+          NODE_MAJOR: '12'
+          YARN_VERSION: '1.13.0'
+          BUNDLER_VERSION: '2.1.4'
+          USER_ID: "${USER_ID:-1000}"
+          GROUP_ID: "${GROUP_ID:-1000}"
+    image: ussd-app.prod:1.0.0
+    env_file:
+      - .env_prod
+    #volumes:
+    #  - .:/app
+    ports:
+      - 3000:3000
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  sidekiq:
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+      args:
+          RUBY_VERSION: '2.7'
+          PG_MAJOR: '11'
+          NODE_MAJOR: '12'
+          YARN_VERSION: '1.13.0'
+          BUNDLER_VERSION: '2.1.4'
+          USER_ID: "${USER_ID:-1000}"
+          GROUP_ID: "${GROUP_ID:-1000}"
+    command: bundle exec sidekiq -C config/sidekiq
+    #image: ussd-app.prod:1.0.0
+    env_file:
+      - .env_prod
+    #volumes:
+    #  - .:/app
+    #ports:
+    #  - 3000:3000
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  postgres:
+    image: postgres:12.1
+    environment:
+      POSTGRES_USER: prepaid
+      POSTGRES_PASSWORD: test_db_password
+      PSQL_HISTFILE: /root/log/.psql_history
+    ports:
+      - '5432:5432'
+    volumes:
+      - .psqlrc:/root/.psqlrc:ro
+      - postgres:/var/lib/postgresql/data
+      - ./log:/root/log:cached
+    healthcheck:
+      test: pg_isready -U prepaid -h 127.0.0.1
+      interval: 5s
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.nginx.prod
+    depends_on:
+      - app
+    ports:
+      - '80:80'
+
+  redis:
+    image: redis:3.2-alpine
+    volumes:
+      - redis:/data
+    ports:
+      - 6379
+    healthcheck:
+      test: redis-cli ping
+      interval: 1s
+      timeout: 3s
+      retries: 30
+
+
+
+
+
+
+
+volumes:
+  postgres:
+  redis:
+  #oracle:
+  #bundle:
+  #node_modules:
+  #rails_cache:
+  #packs:

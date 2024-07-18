@@ -1,0 +1,2 @@
+module SmsManager::AudiencesHelper
+end

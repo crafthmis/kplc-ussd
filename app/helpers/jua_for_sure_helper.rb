@@ -1,0 +1,2 @@
+module JuaForSureHelper
+end

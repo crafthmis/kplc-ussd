@@ -1,0 +1,2 @@
+module BusinessIntelligence::UnservedEnergyHelper
+end

@@ -1,0 +1,151 @@
+<!-- customercare@kplc.co.ke -->
+<!-- web based crm --> 
+<!-- control centerts -->
+
+
+
+<% @minititle = "Analytics Dashboard" %>
+   <div class="container-fluid">
+        <!-- Info boxes -->
+        <div class="row">
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box">
+              <span class="info-box-icon bg-info elevation-1"><i class="nav-icon fas fa-tachometer-alt"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Prepaid</span>
+                <span class="info-box-number">
+                  <%= @prepaid.size %>
+                </span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box mb-3">
+              <span class="info-box-icon bg-danger elevation-1"><i class="nav-icon fas fa-weight"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Postpaid</span>
+                <span class="info-box-number"><%= @postpaid.size %></span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+
+          <!-- fix for small devices only -->
+          <div class="clearfix hidden-md-up"></div>
+
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box mb-3">
+              <span class="info-box-icon bg-success elevation-1"><i class="fas fa-charging-station"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Power Failure</span>
+                <span class="info-box-number"><%= @power_failure.size %></span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box mb-3">
+              <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-user-check"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Jua For Sure</span>
+                <span class="info-box-number"><%= @jua_for_sure.size %></span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <h5 class="card-title">Daily Recap Report</h5>
+
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-tool dropdown-toggle" data-toggle="dropdown">
+                      <i class="fas fa-wrench"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right" role="menu">
+                      <a href="#" class="dropdown-item">Screen Shot</a>
+                      <a href="#" class="dropdown-item">Email</a>
+                      <a href="#" class="dropdown-item">Download</a>
+                      <a class="dropdown-divider"></a>
+                      <a href="#" class="dropdown-item">View Data</a>
+                    </div>
+                  </div>
+                  <button type="button" class="btn btn-tool" data-card-widget="remove">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-12">
+                    <p class="text-center">
+                      <strong>USSD Unique Requests</strong>
+                    </p>
+
+                    <div class="chart">
+                      <!-- Sales Chart Canvas -->
+
+                      <%#= content_tag :div, "",id: "request_labels",data: {requests: request_by_hour(@request_chart,@prepaid,@postpaid,@power_failure,@jua_for_sure,@period,@manage_account)} %>
+                      <%#= pie_chart money_prepaid_safaricom_status_path %>
+
+                      <%= line_chart request_by_hour(@request_chart,@prepaid,@postpaid,@power_failure,@jua_for_sure,@period,@manage_account) %>
+                    </div>
+                    <!-- /.chart-responsive -->
+                  </div>
+                  <!-- /.col -->
+
+                  <!-- /.col -->
+                </div>
+                <!-- /.row -->
+              </div>
+
+
+               <div class="card-body">
+            
+                <!-- /.row -->
+              </div>
+
+
+
+              
+
+
+              <!-- ./card-body -->
+            </div>
+            <!-- /.card -->
+
+
+
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+
+     
+        <!-- /.row -->
+      </div><!--/. container-fluid -->
+
+
+

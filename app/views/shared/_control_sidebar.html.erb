@@ -1,0 +1,75 @@
+  <!-- Main Sidebar Container -->
+  <aside class="control-sidebar control-sidebar-dark">
+      <!-- Content of the sidebar goes here -->
+ 
+
+    <div class="sidebar">
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+        <!--  <li class="nav-item has-treeview <%#= find_drop_open(params['controller'])%>">
+            <a href="#" class="nav-link <%#= find_open(params['controller'])%>">
+              <i class="fas fa-cog"></i>
+                Settings 
+                <i class="right fas fa-angle-left"></i>
+            </a>
+            <ul class="nav nav-treeview">
+                 <li class="nav-item">
+                      <%#= link_to organizations_path , class: "nav-link #{params['controller'] == "organizations" ? 'active' : ''}" do %>
+                      <i class="fas fa-diagnoses nav-icon"></i>
+                        Organization
+                      <%#end%>
+                  </li>
+
+                  <li class="nav-item">
+                    <%#= link_to interfaces_path ,class: "nav-link #{params['controller'] == "interfaces" ? 'active' : ''}" do %>
+                       <i class="fas fa-users-cog nav-icon"></i>
+                        Interfaces
+                     <%#end%>
+                  </li>
+
+
+            </ul>
+          </li>-->
+
+
+        <% if current_user.admin && current_organization %>
+            <li class="nav-item">
+              <%= link_to organization_teams_path(current_organization) ,class: "nav-link #{params['controller'] == "teams" ? 'active' : ''}"  do %>
+              <i class="nav-icon fas fa-random"></i>
+              Workspaces
+              <%end%>
+            </li>
+         <%end%>
+
+
+
+     <li class="nav-item">
+            <%= link_to current_team ,class: "nav-link #{params[:controller] == "teams" ? 'active' : ''}" do %>
+            <i class="nav-icon fas fa-user-friends"></i>
+                Team
+             <%end%>
+       </li>
+
+
+
+          <li class="nav-item">
+               <%= link_to root_path ,class: "nav-link #{params['controller'] == "manage_accounts" ? 'active' : ''}" do %>
+               <i class="nav-icon fas fa-sign-out-alt"></i>
+                 Exit
+               <%end%>
+          </li>
+
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+
+  </aside>
+
+
+

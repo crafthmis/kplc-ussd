@@ -1,0 +1,51 @@
+   <div class="col-12 col-md-12 col-lg-4 order-1 order-md-2">
+              <h3 class="text-primary"><i class="far fa-comments"></i></i><%= @team.name %></h3>
+              <p class="text-muted"> <%= @team.description %></p>
+              <br>
+
+              <div class="text-muted">
+                <p class="text-sm">Team Name
+                  <b class="d-block"><%= @team.name %></b>
+                </p>
+                <p class="text-sm">Team Owner
+                  <b class="d-block"><%= @team.owner.email %></b>
+                </p>
+              </div>
+
+           <h5 class="mt-5 text-muted">Current Members</h5>
+              <ul class="list-unstyled">
+                 <%= content_tag_for(:tr, @members) do |member| %>
+                    <li>
+                      <%=member.email %>
+
+                      <%= link_to "Resend", resend_organization_team_user_path(current_organization,current_team,member) ,class: "btn-link text-primary"%>
+
+                    </li>
+                 <%end%>
+              </ul>
+
+
+
+               <div class="text-center mt-5 mb-3">
+                 <%= link_to organization_teams_path(@team.organization), class: 'btn btn-sm btn-primary' do %>
+                    Back
+                  <% end %>
+                  <%= link_to edit_organization_team_path(@team.organization), class: 'btn btn-sm btn-warning' do %>
+                    Edit
+                 <% end %>
+
+                <%= link_to team_path(@team), class: 'btn btn-sm btn-info' do %>
+                    Enter Workspace
+                <% end %>
+
+            </div>
+       </div>
+
+
+
+
+
+
+
+
+    

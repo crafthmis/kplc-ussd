@@ -1,0 +1,99 @@
+
+
+    <!-- Default box -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Safety Incidences</h3>
+
+          <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+              <i class="fas fa-minus"></i></button>
+            <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
+              <i class="fas fa-times"></i></button>
+          </div>
+        </div>
+        <div class="card-body p-0">
+          <table class="table table-striped projects">
+              <thead>
+                  <tr>
+                      <th style="width: 1%">
+                          #
+                      </th>
+                      <th style="width: 30%">
+                          Number
+                      </th>
+                      <th style="width: 20%">
+                        Explanation
+                      </th>
+                       <th style="width: 20%">
+                        Address
+                      </th>
+                      <th>County</th>
+
+
+                       <th style="width: 30%">
+                      </th>
+                  </tr>
+              </thead>
+              <tbody>
+                 <%= content_tag_for(:tr, @incidences) do |incidence| %>
+                  <tr>
+                      <td>
+                          #
+                      </td>
+                      <td>
+
+                        <ul class="list-inline">
+                              <li class="list-inline-item">
+                                <%=image_tag("avatar.png",alt: "Avatar", class: "table-avatar") %>
+                              </li>
+
+                                <a>
+                                    <%= incidence.customer.number %></br>
+                             
+
+                          <small>
+                              Created <%= time_ago_in_words(incidence.created_at) %>
+                          </small>    </a>
+                           
+                          </ul>
+
+                        
+
+
+
+                      </td>
+                      <td>
+
+                           <%= incidence.explanation %>
+                      </td>
+
+                      <td>
+                       <%= incidence.full_address %>
+                      </td>
+
+                      <td><%= incidence.county %></td>
+                   
+                      <td class="project-actions text-right">
+
+                                 
+                        <%= link_to resolve_team_ussd_manager_incidence_path(current_team,incidence),class: "btn btn-danger btn-sm" , data: { confirm: 'Are you sure?' } do %>
+                               <i class="fas fa-trash">
+                              </i>
+                           Mark As Resolved
+                        <%end%>
+
+
+                      </td>
+                  </tr>
+                   <% end %>
+                </tbody>
+
+                <%= paginate @incidences %>
+          </table>
+
+        </div>
+        <!-- /.card-body -->
+      </div>
+
+

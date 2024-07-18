@@ -1,0 +1,2 @@
+module Money::PostpaidHelper
+end

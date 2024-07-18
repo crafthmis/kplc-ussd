@@ -1,0 +1,11 @@
+<h1>Sample KCT Token Record</h1>
+
+<% if @sample_record %>
+  <ul>
+    <% @sample_record.attributes.each do |key, value| %>
+      <li><strong><%= key %>:</strong> <%= value %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No sample record found.</p>
+<% end %>

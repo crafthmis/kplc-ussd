@@ -1,0 +1,3 @@
+class Bulk < Campaign 
+
+end

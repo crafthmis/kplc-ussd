@@ -1,0 +1,26 @@
+      <li class="nav-item has-treeview">
+        <a href="#" class="nav-link">
+          <i class="nav-icon fas fa-weight"></i>
+
+          <p>
+            Postpaid
+            <i class="right fas fa-angle-left"></i>
+          </p>
+        </a>
+        <ul class="nav nav-treeview">
+         <li class="nav-item">
+             <%= link_to money_postpaid_safaricom_path ,class: "nav-link #{params['controller'] == "settings" ? 'active' : ''}" do %>
+               <i class="nav-icon fas fa-weight"></i>
+                Safaricom
+              <%end%>
+          </li>
+
+
+        </ul>
+      </li>
+
+
+
+
+
+

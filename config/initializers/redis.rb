@@ -1,0 +1,1 @@
+$redis = Redis::Namespace.new("ussd_kplc", :redis => Redis.new)

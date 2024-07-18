@@ -1,0 +1,69 @@
+ARG RUBY_VERSION
+# See explanation below
+FROM ruby:$RUBY_VERSION
+
+LABEL maintainer="dunake@gmail.com"
+
+ARG USER_ID
+ARG GROUP_ID
+ARG BUNDLER_VERSION
+
+RUN addgroup --gid $GROUP_ID user
+RUN adduser --disabled-password --gecos '' --uid $USER_ID --gid $GROUP_ID user
+
+ENV RAILS_ENV production
+ENV RACK_ENV production
+ENV NODE_ENV production
+##This is set to true because we have some assets like icons sent from Rails
+ENV RAILS_SERVE_STATIC_FILES true
+ENV RAILS_LOG_TO_STDOUT true
+
+ENV RAILS_ROOT /opt/app
+RUN mkdir -p $RAILS_ROOT
+
+ENV ORACLE_HOME "/usr/lib/oracle/19.9/client64"
+ENV LD_LIBRARY_PATH "$ORACLE_HOME/lib"
+ENV PATH "$PATH:$ORACLE_HOME/bin"
+
+COPY \
+  vendor/oracle/oracle-instantclient19.9-basic-19.9.0.0.0-1.x86_64.rpm\
+  vendor/oracle/oracle-instantclient19.9-devel-19.9.0.0.0-1.x86_64.rpm\
+  vendor/oracle/oracle-instantclient19.9-sqlplus-19.9.0.0.0-1.x86_64.rpm\
+  /tmp/
+
+RUN set -ex && \
+  BUILD_PACKAGES='alien build-essential libaio-dev' && \
+  apt-get update && \
+  apt-get install -y --no-install-recommends $BUILD_PACKAGES libaio1 && \
+  for f in /tmp/oracle-*.rpm; do alien -i $f; done && \
+  apt-get purge -y --auto-remove $BUILD_PACKAGES && \
+  rm -rf /tmp/*.rpm && \
+  echo /usr/lib/oracle/19.6/client64/lib > /etc/ld.so.conf.d/oracle-instantclient19.6.conf && \
+  ldconfig
+
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg -o /root/yarn-pubkey.gpg && apt-key add /root/yarn-pubkey.gpg
+RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" > /etc/apt/sources.list.d/yarn.list
+RUN apt-get update && apt-get install -y --no-install-recommends nodejs yarn postgresql-client vim
+
+RUN gem update --system && \
+    gem install bundler:$BUNDLER_VERSION
+
+WORKDIR /opt/app
+
+COPY Gemfile Gemfile
+COPY Gemfile.lock Gemfile.lock
+RUN bundle install
+
+COPY . ./
+#RUN bundle exec rake SECRET_KEY_BASE=pickasecuretoken DATABASE_URL=postgresql://prepaid:test_db_password@postgres:5432/prepaid?encoding=utf8&pool=5&timeout=5000
+# assets:precompile
+RUN chown -R user:user /opt/app
+USER $USER_ID
+RUN yarn install --check-files
+#RUN RAILS_ENV=production bundle exec rake assets:precompile
+RUN bundle exec rake DATABASE_URL=postgresql:does_not_exist assets:precompile SECRET_KEY_BASE=pickasecuretoken
+
+VOLUME ["$RAILS_ROOT/public"]
+EXPOSE 3000
+#CMD bundle exec puma -C config/puma.rb
+CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]

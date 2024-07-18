@@ -1,0 +1,65 @@
+
+<body class="hold-transition lockscreen jumbotron">
+
+<div class="lockscreen-wrapper">
+  <div class="lockscreen-logo">
+    <a href="#"><b>KPLC</b>SPARK</a>
+  </div>
+  <div class="lockscreen-name"><%= current_user.email %></div>
+
+
+
+  <%= form_tag('/home') do -%>
+
+    <div class="lockscreen-item">
+         <div class="lockscreen-image">
+             <%= image_tag "avatar.png", alt: "User Image" %>
+          </div>
+
+
+       <div class="lockscreen-credentials">
+          <%= select_tag :workspace_id ,options_for_select(@teams.collect { |p| [ p.name, p.id ] }),{ :class => 'form-control' }%>
+          <%#= select_tag(:organization_interface_id, , { prompt: 'Select Interface' },{ class: 'form-control' })%>
+
+        </div>
+
+
+   
+
+      </div>
+  
+      <div class="social-auth-links text-center mb-3">
+        <%= button_tag :submit, class: "btn btn-block btn-default"  do %>
+           
+              <span style="font-size: 1.5em;">
+                 Continue&nbsp;&nbsp;
+               <i class="fas fa-sign-in-alt"></i>
+              </span>
+        <% end %>
+
+      </div>
+
+
+   <% end -%>
+
+
+
+  <div class="help-block text-center">
+    Select your workspace to resume 
+  </div>
+  <div class="text-center">
+    - OR -
+       <%= link_to destroy_user_session_path,method: :delete do %>
+          Sign Out
+      <%end%>
+      to end your session   </div>
+
+  <p class="mb-0">
+    <%= flash_messages layout_flash: false %>
+  </p>
+
+</div>
+
+</body> 
+
+

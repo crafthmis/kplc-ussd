@@ -1,0 +1,70 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic dmoyN0RoQXRNVWpQOWViUlVpZWhrakQxbU9zTVI1bTk6M3J2SXlqYUF5SmxkZk8wMg==
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 21 Apr 2020 21:37:26 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '113'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-store
+    body:
+      encoding: UTF-8
+      string: "{\n            \"access_token\": \"gpwGgRfrSA0BVmIUtwqhhGdHJ3ua\",\n
+        \           \"expires_in\": \"3599\"\n        }\n        "
+    http_version: null
+  recorded_at: Tue, 21 Apr 2020 21:37:26 GMT
+- request:
+    method: post
+    uri: https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest
+    body:
+      encoding: UTF-8
+      string: '{"BusinessShortCode":"174379","Password":"MTc0Mzc5YmZiMjc5ZjlhYTliZGJjZjE1OGU5N2RkNzFhNDY3Y2QyZTBjODkzMDU5YjEwZjc4ZTZiNzJhZGExZWQyYzkxOTIwMjAwNDIyMDAzNzI2","Timestamp":"20200422003726","TransactionType":"CustomerPayBillOnline","Amount":"10","PartyA":"254712829808","PartyB":"174379","PhoneNumber":"254712829808","CallBackURL":"https://eddd5f50.ngrok.io/api/v1/mpesa/checkout_callback","AccountReference":"14243784684","TransactionDesc":"KPLC
+        USSD Purchase Token"}'
+    headers:
+      Authorization:
+      - Bearer gpwGgRfrSA0BVmIUtwqhhGdHJ3ua
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 21 Apr 2020 21:37:30 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '315'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-store
+    body:
+      encoding: UTF-8
+      string: "{\n            \"MerchantRequestID\":\"23625-8362655-1\",\n            \"CheckoutRequestID\":\"ws_CO_220420200037265876\",\n
+        \           \"ResponseCode\": \"0\",\n            \"ResponseDescription\":\"Success.
+        Request accepted for processing\",\n            \"CustomerMessage\":\"Success.
+        Request accepted for processing\"\n        }\n        "
+    http_version: null
+  recorded_at: Tue, 21 Apr 2020 21:37:30 GMT
+recorded_with: VCR 5.1.0

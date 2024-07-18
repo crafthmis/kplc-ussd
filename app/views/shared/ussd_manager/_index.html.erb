@@ -1,0 +1,7 @@
+  <li class="nav-item">
+      <%= link_to team_ussd_manager_dashboard_index_path(current_team) ,class: "nav-link #{params[:controller].split("/").first == "ussd_manager" ? 'active' : ''}" do %>
+       <i class="nav-icon fas fa-comments"></i>
+         <p>USSD Manager</p>
+      <%end%>
+  </li>
+              

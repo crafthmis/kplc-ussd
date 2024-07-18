@@ -1,0 +1,199 @@
+[1;31m●[0m ussd.kplc.local
+    State: [1;31mdegraded[0m
+     Jobs: 0 queued
+   Failed: 1 units
+    Since: Tue 2024-04-30 06:13:41 EAT; 3 weeks 1 days ago
+   CGroup: /
+           ├─1 /usr/lib/systemd/systemd --switched-root --system --deserialize 22
+           ├─user.slice
+           │ ├─user-1015.slice
+           │ │ ├─session-593.scope
+           │ │ │ ├─17652 sshd: kpl85540 [priv
+           │ │ │ ├─17713 sshd: kpl85540@notty
+           │ │ │ └─17796 /usr/libexec/openssh/sftp-server
+           │ │ └─session-592.scope
+           │ │   ├─17650 sshd: kpl85540 [priv
+           │ │   ├─17653 sshd: kpl85540@pts/2
+           │ │   ├─17655 -bash
+           │ │   ├─17941 sudo -i
+           │ │   ├─17962 -bash
+           │ │   ├─48235 bash -c while true; do sleep 1;head -v -n 8 /proc/meminfo; head -v -n 2 /proc/stat /proc/version /proc/uptime /proc/loadavg /proc/sys/fs/file-nr /proc/sys/kernel/hostname; tail -v -n 32 /proc/net/dev;echo '==> /proc/df <==';df -l;echo '==> /proc/who <==';who;echo '==> /proc/end <==';echo '##Moba##'; done
+           │ │   └─59351 sleep 1
+           │ ├─user-1013.slice
+           │ │ ├─session-591.scope
+           │ │ │ ├─17013 sshd: kpl86540 [priv
+           │ │ │ ├─17053 sshd: kpl86540@notty
+           │ │ │ └─17087 /usr/libexec/openssh/sftp-server
+           │ │ └─session-590.scope
+           │ │   ├─17010 sshd: kpl86540 [priv
+           │ │   ├─17014 sshd: kpl86540@pts/1
+           │ │   ├─17016 -bash
+           │ │   ├─17206 sudo -i
+           │ │   └─17207 -bash
+           │ ├─user-1007.slice
+           │ │ ├─session-588.scope
+           │ │ │ ├─13306 sshd: kpl85994 [priv
+           │ │ │ ├─13373 sshd: kpl85994@pts/0
+           │ │ │ ├─13374 -bash
+           │ │ │ ├─14560 sidekiq 5.2.9 prepaid [0 of 25 busy]                                                                                                                                                      
+           │ │ │ ├─14793 sidekiq 5.2.9 prepaid [0 of 25 busy]                                                                                                                                                      
+           │ │ │ ├─15887 sidekiq 5.2.9 prepaid [0 of 25 busy]                                                                                                                                                      
+           │ │ │ ├─16080 sidekiq 5.2.9 prepaid [0 of 25 busy]                                                                                                                                                      
+           │ │ │ ├─59352 systemctl status
+           │ │ │ └─59353 less
+           │ │ ├─session-549.scope
+           │ │ │ ├─44512 sidekiq 5.2.9 prepaid [0 of 25 busy]                                                                                                                                                      
+           │ │ │ └─44603 sidekiq 5.2.9 prepaid [0 of 25 busy]                                                                                                                                                      
+           │ │ ├─session-541.scope
+           │ │ │ └─18649 sidekiq 5.2.9 prepaid [0 of 25 busy]                                                                                                                                                      
+           │ │ ├─session-485.scope
+           │ │ │ └─30193 sidekiq 5.2.9 prepaid [0 of 25 busy]                                                                                                                                                      
+           │ │ ├─session-472.scope
+           │ │ │ └─56992 sidekiq 5.2.9 prepaid [0 of 25 busy]                                                                                                                                                      
+           │ │ ├─session-451.scope
+           │ │ │ └─64069 sidekiq 5.2.9 prepaid [0 of 25 busy]                                                                                                                                                      
+           │ │ ├─session-403.scope
+           │ │ │ └─31251 sidekiq 5.2.9 prepaid [0 of 25 busy]                                                                                                                                                      
+           │ │ ├─session-201.scope
+           │ │ │ └─34028 sidekiq 5.2.9 prepaid [0 of 25 busy]                                                                                                                                                      
+           │ │ ├─session-153.scope
+           │ │ │ └─47834 sidekiq 5.2.9 prepaid [0 of 25 busy]                                                                                                                                                      
+           │ │ ├─session-108.scope
+           │ │ │ └─7558 sidekiq 5.2.9 prepaid [0 of 25 busy]                                                                                                                                                      
+           │ │ ├─session-78.scope
+           │ │ │ └─32069 sidekiq 5.2.9 prepaid [0 of 25 busy]                                                                                                                                                      
+           │ │ └─session-2.scope
+           │ │   └─7560 sidekiq 5.2.9 prepaid [0 of 25 busy]                                                                                                                                                      
+           │ └─user-1005.slice
+           │   └─session-c1.scope
+           │     ├─2062 /home/oracle/emagent/agent_13.5.0.0.0/perl/bin/perl /home/oracle/emagent/agent_13.5.0.0.0/bin/emwd.pl agent /home/oracle/emagent/agent_inst/sysman/log/emagent.nohup
+           │     └─2140 /home/oracle/emagent/agent_13.5.0.0.0/oracle_common/jdk/bin/java -Xmx128M -XX:MaxMetaspaceSize=192M -server -Djava.security.egd=file:///dev/./urandom -Dsun.lang.ClassLoader.allowArraySyntax=true -XX:-UseLargePages -XX:+UseLinuxPosixThreadCPUClocks -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -XX:+UseCompressedOops -DHTTPClient.dontSeekTerminatingChunk=true -Dwatchdog.pid=2062 -cp /home/oracle/emagent/agent_13.5.0.0.0/jdbc/lib/ojdbc8.jar:/home/oracle/emagent/agent_13.5.0.0.0/ucp/lib/ucp.jar:/home/oracle/emagent/agent_13.5.0.0.0/oracle_common/modules/com.oracle.http_client.http_client.jar:/home/oracle/emagent/agent_13.5.0.0.0/oracle_common/modules/oracle.xdk/xmlparserv2.jar:/home/oracle/emagent/agent_13.5.0.0.0/oracle_common/modules/oracle.dms/dms.jar:/home/oracle/emagent/agent_13.5.0.0.0/oracle_common/modules/oracle.odl/ojdl.jar:/home/oracle/emagent/agent_13.5.0.0.0/oracle_common/modules/oracle.odl/ojdl2.jar:/home/oracle/emagent/agent_13.5.0.0.0/lib/optic.jar:/home/oracle/emagent/agent_13.5.0.0.0/sysman/jlib/log4j-core.jar:/home/oracle/emagent/agent_13.5.0.0.0/jlib/sshd-common.jar:/home/oracle/emagent/agent_13.5.0.0.0/jlib/sshd-core.jar:/home/oracle/emagent/agent_13.5.0.0.0/jlib/sshd-sftp.jar:/home/oracle/emagent/agent_13.5.0.0.0/jlib/slf4j-api-1.7.5.jar:/home/oracle/emagent/agent_13.5.0.0.0/jlib/bcprov-jdk15on-162.jar:/home/oracle/emagent/agent_13.5.0.0.0/jlib/bcpkix-jdk15on-162.jar:/home/oracle/emagent/agent_13.5.0.0.0/jlib/gcagent_core.jar:/home/oracle/emagent/agent_13.5.0.0.0/sysman/jlib/emagentSDK-intg.jar:/home/oracle/emagent/agent_13.5.0.0.0/sysman/jlib/emagentSDK.jar oracle.sysman.gcagent.tmmain.TMMain
+           └─system.slice
+             ├─nginx.service
+             │ ├─24847 Passenger watchdog                                                      
+             │ ├─24850 Passenger core                                                      
+             │ ├─24876 nginx: master process /usr/sbin/ngin
+             │ ├─24891 nginx: worker proces
+             │ ├─24897 nginx: worker proces
+             │ ├─24898 nginx: worker proces
+             │ ├─24899 nginx: worker proces
+             │ ├─24900 nginx: worker proces
+             │ ├─24901 nginx: worker proces
+             │ ├─24902 nginx: worker proces
+             │ ├─24903 nginx: worker proces
+             │ ├─24904 nginx: worker proces
+             │ ├─24905 nginx: worker proces
+             │ ├─24906 nginx: worker proces
+             │ ├─24907 nginx: worker proces
+             │ ├─24908 nginx: worker proces
+             │ ├─24909 nginx: worker proces
+             │ ├─24910 nginx: worker proces
+             │ ├─24911 nginx: worker proces
+             │ ├─25127 Passenger AppPreloader: /var/www/prepaid/current (forking...
+             │ ├─25144 Passenger AppPreloader: /var/www/prepaid/current (forking...
+             │ ├─25162 Passenger AppPreloader: /var/www/prepaid/current (forking...
+             │ ├─25190 Passenger AppPreloader: /var/www/prepaid/current (forking...
+             │ ├─57361 Passenger AppPreloader: /var/www/prepaid/current          
+             │ ├─57570 Passenger AppPreloader: /var/www/prepaid/current (forking...
+             │ ├─57587 Passenger AppPreloader: /var/www/prepaid/current (forking...
+             │ ├─57612 Passenger AppPreloader: /var/www/prepaid/current (forking...
+             │ └─57633 Passenger AppPreloader: /var/www/prepaid/current (forking...
+             ├─swiagentd.service
+             │ ├─1944 /opt/SolarWinds/Agent/bin/swiagent /detach pidfile=/opt/SolarWinds/Agent/bin/swiagentd.pid
+             │ └─1994 /opt/SolarWinds/Agent/bin/Plugins/JobEngine/SolarWinds.Agent.JobEngine.Plugin ep=EWA5BB8914E30DC44E381999D9227FB41DC id=54c9c9ff-268e-4ff2-a958-4c4768b12747.EWWP ipc=ipc_mq_v1 fipsmodulepath=/opt/SolarWinds/Agent/bin fipscnf=/opt/SolarWinds/Agent/bin/fips.cnf
+             ├─tuned.service
+             │ └─1224 /usr/bin/python2 -Es /usr/sbin/tuned -l -P
+             ├─filebeat.service
+             │ └─1222 /usr/share/filebeat/bin/filebeat -c /etc/filebeat/filebeat.yml -path.home /usr/share/filebeat -path.config /etc/filebeat -path.data /var/lib/filebeat -path.logs /var/log/filebeat
+             ├─snmpd.service
+             │ └─1220 /usr/sbin/snmpd -LS0-6d -f
+             ├─rsyslog.service
+             │ └─1219 /usr/sbin/rsyslogd -n
+             ├─redis.service
+             │ └─1210 /usr/bin/redis-server 127.0.0.1:6379                      
+             ├─memcached.service
+             │ └─1208 /usr/bin/memcached -u memcached -p 11211 -m 64 -c 1024 -l 127.0.0.1 -U 0
+             ├─rhsmcertd.service
+             │ └─1233 /usr/bin/rhsmcertd
+             ├─postgresql-11.service
+             │ ├─ 1240 /usr/pgsql-11/bin/postmaster -D /var/lib/pgsql/11/data/
+             │ ├─ 1717 postgres: logger                                       
+             │ ├─ 3180 postgres: checkpointer                                 
+             │ ├─ 3181 postgres: background writer                            
+             │ ├─ 3182 postgres: walwriter                                    
+             │ ├─ 3183 postgres: autovacuum launcher                          
+             │ ├─ 3184 postgres: stats collector                              
+             │ ├─ 3185 postgres: logical replication launcher                 
+             │ ├─22160 postgres: kpl87028 prepaid_production [local] idle     
+             │ ├─22254 postgres: kpl87028 prepaid_production [local] idle     
+             │ ├─22270 postgres: kpl87028 prepaid_production [local] idle     
+             │ ├─23227 postgres: kpl87028 prepaid_production [local] idle     
+             │ ├─25165 postgres: kpl87028 prepaid_production [local] idle     
+             │ ├─25195 postgres: kpl87028 prepaid_production [local] idle     
+             │ ├─25208 postgres: kpl87028 prepaid_production [local] idle     
+             │ ├─25431 postgres: kpl87028 prepaid_production [local] idle     
+             │ ├─29251 postgres: kpl87028 prepaid_production [local] idle     
+             │ ├─29999 postgres: kpl87028 prepaid_production [local] idle     
+             │ ├─30376 postgres: kpl87028 prepaid_production [local] idle     
+             │ ├─32141 postgres: kpl87028 prepaid_production [local] idle     
+             │ ├─33686 postgres: kpl87028 prepaid_production [local] idle     
+             │ ├─35752 postgres: kpl87028 prepaid_production [local] idle     
+             │ ├─38825 postgres: kpl87028 prepaid_production [local] idle     
+             │ ├─39276 postgres: kpl87028 prepaid_production [local] idle     
+             │ ├─42630 postgres: kpl87028 prepaid_production [local] idle     
+             │ ├─43238 postgres: kpl87028 prepaid_production [local] idle     
+             │ ├─44120 postgres: kpl87028 prepaid_production [local] idle     
+             │ ├─47953 postgres: kpl87028 prepaid_production [local] idle     
+             │ ├─47960 postgres: kpl87028 prepaid_production [local] idle     
+             │ ├─47995 postgres: kpl87028 prepaid_production [local] idle     
+             │ ├─49519 postgres: kpl87028 prepaid_production [local] idle     
+             │ ├─49982 postgres: kpl87028 prepaid_production [local] idle     
+             │ ├─51560 postgres: kpl87028 prepaid_production [local] idle     
+             │ ├─51844 postgres: kpl87028 prepaid_production [local] idle     
+             │ ├─53525 postgres: kpl87028 prepaid_production [local] idle     
+             │ ├─56012 postgres: kpl87028 prepaid_production [local] idle     
+             │ ├─56259 postgres: kpl87028 prepaid_production [local] idle     
+             │ ├─56359 postgres: kpl87028 prepaid_production [local] idle     
+             │ ├─56853 postgres: kpl87028 prepaid_production [local] idle     
+             │ ├─56877 postgres: kpl87028 prepaid_production [local] idle     
+             │ ├─57181 postgres: kpl87028 prepaid_production [local] idle     
+             │ ├─57360 postgres: kpl87028 prepaid_production [local] idle     
+             │ ├─57617 postgres: kpl87028 prepaid_production [local] idle     
+             │ ├─57638 postgres: kpl87028 prepaid_production [local] idle     
+             │ ├─57653 postgres: kpl87028 prepaid_production [local] idle     
+             │ ├─57758 postgres: kpl87028 prepaid_production [local] idle     
+             │ └─58543 postgres: kpl87028 prepaid_production [local] idle     
+             ├─monit.service
+             │ └─1205 /usr/bin/monit -I
+             ├─sshd.service
+             │ └─1204 /usr/sbin/sshd -D
+             ├─crond.service
+             │ └─928 /usr/sbin/crond -n
+             ├─NetworkManager.service
+             │ ├─906 /usr/sbin/NetworkManager --no-daemon
+             │ └─976 /usr/sbin/dnsmasq --no-resolv --keep-in-foreground --no-hosts --bind-interfaces --pid-file=/var/run/NetworkManager/dnsmasq.pid --listen-address=127.0.0.1 --cache-size=400 --clear-on-reload --conf-file=/dev/null --proxy-dnssec --enable-dbus=org.freedesktop.NetworkManager.dnsmasq --conf-dir=/etc/NetworkManager/dnsmasq.d
+             ├─chronyd.service
+             │ └─911 /usr/sbin/chronyd
+             ├─gssproxy.service
+             │ └─915 /usr/sbin/gssproxy -D
+             ├─polkit.service
+             │ └─897 /usr/lib/polkit-1/polkitd --no-debug
+             ├─dbus.service
+             │ └─894 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation
+             ├─systemd-logind.service
+             │ └─893 /usr/lib/systemd/systemd-logind
+             ├─irqbalance.service
+             │ └─892 /usr/sbin/irqbalance --foreground
+             ├─rpcbind.service
+             │ └─895 /sbin/rpcbind -w
+             ├─auditd.service
+             │ └─872 /sbin/auditd
+             ├─systemd-udevd.service
+             │ └─670 /usr/lib/systemd/systemd-udevd
+             ├─lvm2-lvmetad.service
+             │ └─658 /usr/sbin/lvmetad -f
+             ├─system-getty.slice
+             │ └─getty@tty1.service
+             │   └─936 /sbin/agetty --noclear tty1 linux
+             └─systemd-journald.service
+               └─634 /usr/lib/systemd/systemd-journald

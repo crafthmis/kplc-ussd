@@ -1,0 +1,62 @@
+<div class="page-header">
+  <%= link_to confirmations_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <%= link_to edit_confirmation_path(@confirmation), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
+  <% end %>
+  <h1>Show confirmation</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Seqnum:</dt>
+  <dd><%= @confirmation.seqnum %></dd>
+
+  <dt>Create date:</dt>
+  <dd><%= @confirmation.create_date %></dd>
+
+  <dt>Billrefnumber:</dt>
+  <dd><%= @confirmation.billrefnumber %></dd>
+
+  <dt>Transamount:</dt>
+  <dd><%= @confirmation.transamount %></dd>
+
+  <dt>Transid:</dt>
+  <dd><%= @confirmation.transid %></dd>
+
+  <dt>Transtype:</dt>
+  <dd><%= @confirmation.transtype %></dd>
+
+  <dt>Kptransid:</dt>
+  <dd><%= @confirmation.kptransid %></dd>
+
+  <dt>Mobilenumber:</dt>
+  <dd><%= @confirmation.mobilenumber %></dd>
+
+  <dt>Transtime:</dt>
+  <dd><%= @confirmation.transtime %></dd>
+
+  <dt>Invoicenumber:</dt>
+  <dd><%= @confirmation.invoicenumber %></dd>
+
+  <dt>Messages:</dt>
+  <dd><%= @confirmation.messages %></dd>
+
+  <dt>Status:</dt>
+  <dd><%= @confirmation.status %></dd>
+
+  <dt>Lastamount:</dt>
+  <dd><%= @confirmation.lastamount %></dd>
+
+  <dt>Messageid:</dt>
+  <dd><%= @confirmation.messageid %></dd>
+
+  <dt>Method:</dt>
+  <dd><%= @confirmation.method %></dd>
+
+  <dt>Userid:</dt>
+  <dd><%= @confirmation.userid %></dd>
+
+</dl>

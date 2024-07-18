@@ -1,0 +1,36 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://172.16.4.53:8080/api/send-sms
+    body:
+      encoding: UTF-8
+      string: '{"messages":"ID NO.12345678,TEST is a Kenya Power Contractor.","mobile":["254712829808"],"sms_ID":2}'
+    headers:
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - POST, PUT, GET, OPTIONS, DELETE
+      Access-Control-Max-Age:
+      - '3600'
+      Access-Control-Allow-Headers:
+      - Content-Type, Authorization, Content-Length, X-Requested-With
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Wed, 11 Mar 2020 09:05:43 GMT
+    body:
+      encoding: UTF-8
+      string: '{"code":200,"message":"Success","data":null,"timestamp":1583917543879}'
+    http_version: null
+  recorded_at: Wed, 11 Mar 2020 09:09:21 GMT
+recorded_with: VCR 5.1.0

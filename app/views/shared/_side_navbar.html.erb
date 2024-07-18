@@ -1,0 +1,9 @@
+<% if current_team %>
+   <% accessible = current_team.return_accessible %>
+ 
+
+  <% accessible.each do |menu| %>
+      <%= render "shared/#{menu}/index"  %>
+  <%end%>
+  
+<%end%>

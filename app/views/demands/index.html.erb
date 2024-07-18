@@ -1,0 +1,43 @@
+<div class="page-header">
+  <%= link_to new_demand_path, class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-plus"></span>
+    New Demand
+  <% end %>
+  <h1>Listing demands</h1>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+            <th>Request</th>
+            <th>Request timestamp</th>
+            <th>Channel</th>
+            <th>Operation</th>
+            <th>Offer code</th>
+            <th>Customer</th>
+            <th>Link</th>
+            <th>Content</th>
+            <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= content_tag_for(:tr, @demands) do |demand| %>
+            <td><%= demand.request_id %></td>
+            <td><%= demand.request_timestamp %></td>
+            <td><%= demand.channel %></td>
+            <td><%= demand.operation %></td>
+            <td><%= demand.offer_code %></td>
+            <td><%= demand.customer %></td>
+            <td><%= demand.link_id %></td>
+            <td><%= demand.content %></td>
+            <td><%= link_to 'Show', demand %></td>
+        <td><%= link_to 'Edit', edit_demand_path(demand) %></td>
+        <td><%= link_to 'Destroy', demand, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://apim.kplc.local/accounts/2.0.1/47042221/balance
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 16 Mar 2020 03:50:27 GMT
+      Server:
+      - Apache/2.4.29 (Unix) OpenSSL/1.0.2n
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, OPTIONS, HEAD,PATCH
+      X-Oracle-Dms-Ecid:
+      - 31b32aeb-f1fa-4db9-a03b-760b66db7c47-00125f5c
+      X-Oracle-Dms-Rid:
+      - '0'
+      Access-Control-Allow-Headers:
+      - origin, content-type, accept, authorization
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":{"accountReference":"47042221","balance":1.33,"dueDate":1583442000000,"formatedDueDate":"2020-03-06","fullName":"ROBERT
+        JALLANG&apos;O AKELLO","lastAmount":615,"formatedBalance":"-1.33"}}'
+    http_version: null
+  recorded_at: Mon, 16 Mar 2020 04:46:34 GMT
+recorded_with: VCR 5.1.0

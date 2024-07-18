@@ -1,0 +1,2 @@
+module BusinessIntelligence::PostpaidAmountHelper
+end

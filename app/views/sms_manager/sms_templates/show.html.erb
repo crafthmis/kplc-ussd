@@ -1,0 +1,20 @@
+<div class="page-header">
+  <%= link_to team_sms_manager_sms_templates_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <%= link_to edit_team_sms_manager_sms_template_path(@sms_manager_sms_template), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
+  <% end %>
+  <h1>Show sms_manager_sms_template</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Name:</dt>
+  <dd><%= @sms_manager_sms_template.name %></dd>
+
+  <dt>Message:</dt>
+  <dd><%= @sms_manager_sms_template.message %></dd>
+
+</dl>

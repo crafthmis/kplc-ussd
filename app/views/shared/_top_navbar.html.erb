@@ -1,0 +1,35 @@
+<% if current_team %>
+ 
+
+  <li class="nav-item">
+      <%= link_to current_team,class: "nav-link" do %>
+           Home
+      <%end%>
+  </li>
+
+  <%# if current_team.allow_access("application_analytics") && params[:controller].split("/").first == "application_analytics" %>
+    <%#= render "shared/application_analytics/top_navbar"  %>
+  <%#end%>
+
+   <% current_application_name.each do |menu| %>
+      <% if params[:controller].split("/").first == menu %>
+        <%= render "shared/#{menu}/top_navbar"  %>
+      <%end%>
+  <%end%>
+  
+<%elsif current_organization %>
+  <%= render "shared/workspaces/top_navbar"  %>
+<%else %>
+  <%= render "shared/workspaces/top_navbar"  %>  <!-- check why redundant -->
+<%end%>
+
+
+
+
+
+
+
+
+
+
+

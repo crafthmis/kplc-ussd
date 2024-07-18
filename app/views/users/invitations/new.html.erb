@@ -1,0 +1,57 @@
+<% @minititle = "Staff Management" %>
+ <section class="dashboard-counts no-padding-bottom">
+<div style="margin-left: 10px; margin-right:20px">
+
+<%= form_for resource, :as => resource_name, :url => invitation_path(resource_name), :html => {:method => :post} do |f| %>
+  <%= devise_error_messages! %>
+
+<% resource.class.invite_key_fields.each do |field| -%>
+  <p><%= f.label field %><br />
+  <%= f.text_field field,class: "form-control" %></p>
+<% end -%>
+
+  <p><%= f.submit t("devise.invitations.new.submit_button"),class: "btn btn-danger block" %></p>
+<% end %>
+
+
+
+                 <div class="col-lg-12">
+                  <div class="card">
+              
+                    <div class="card-header d-flex align-items-center">
+                      <h3 class="h4">This is the list of current staff members</h3>
+                    </div>
+                    <div class="card-body">
+                      <div class="table-responsive">                       
+                        <table class="table table-striped table-hover">
+                          <thead>
+                            <tr>
+                              <th>Email</th>
+                              <th>Invitation sent by</th>
+                              <th>Invitation state</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                               <% User.where.not('invitation_created_at' => nil).each do |user| %>
+                                <tr>
+                                    <td><%= user.try(:email)%></td>
+
+                                    <td><%= User.find(user.invited_by_id).email %></td>
+                                    <td>
+                                    <% if user.invitation_accepted_at %>
+                                        Accepted
+                                    <%else%>
+                                       Pending
+                                    <%end%>
+                                    <td>
+
+                                   <%#= link_to "Delete", account_users_destroy_path(id: user.id), method: :delete, data: { confirm: "Are you sure you want to delete this user?" } %>
+                                </tr>
+                              <%end%>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+</section>   

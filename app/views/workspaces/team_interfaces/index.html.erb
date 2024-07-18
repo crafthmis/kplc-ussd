@@ -1,0 +1,33 @@
+<div class="page-header">
+  <%= link_to new_team_interface_path, class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-plus"></span>
+    New Team interface
+  <% end %>
+  <h1>Listing team_interfaces</h1>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+            <th>Team</th>
+            <th>Organization interface</th>
+            <th>Organization</th>
+            <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= content_tag_for(:tr, @team_interfaces) do |team_interface| %>
+            <td><%= team_interface.team %></td>
+            <td><%= team_interface.organization_interface %></td>
+            <td><%= team_interface.organization %></td>
+            <td><%= link_to 'Show', team_interface %></td>
+        <td><%= link_to 'Edit', edit_team_interface_path(team_interface) %></td>
+        <td><%= link_to 'Destroy', team_interface, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </tbody>
+  </table>
+</div>

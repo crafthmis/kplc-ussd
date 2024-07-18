@@ -1,0 +1,23 @@
+<div class="page-header">
+  <%= link_to team_interfaces_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <%= link_to edit_team_interface_path(@team_interface), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
+  <% end %>
+  <h1>Show team_interface</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Team:</dt>
+  <dd><%= @team_interface.team %></dd>
+
+  <dt>Organization interface:</dt>
+  <dd><%= @team_interface.organization_interface %></dd>
+
+  <dt>Organization:</dt>
+  <dd><%= @team_interface.organization %></dd>
+
+</dl>

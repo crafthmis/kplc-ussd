@@ -1,0 +1,37 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://172.16.4.53:8080/api/send-sms
+    body:
+      encoding: UTF-8
+      string: '{"messages":"STAFF NO.12345 is a fraudstar, report immediately on the
+        Anti-Fraud Hotline Number: 0718-999-000","mobile":["254712829808"],"sms_ID":24}'
+    headers:
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - POST, PUT, GET, OPTIONS, DELETE
+      Access-Control-Max-Age:
+      - '3600'
+      Access-Control-Allow-Headers:
+      - Content-Type, Authorization, Content-Length, X-Requested-With
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Wed, 11 Mar 2020 07:53:36 GMT
+    body:
+      encoding: UTF-8
+      string: '{"code":200,"message":"Success","data":null,"timestamp":1583913216066}'
+    http_version: null
+  recorded_at: Wed, 11 Mar 2020 07:57:13 GMT
+recorded_with: VCR 5.1.0

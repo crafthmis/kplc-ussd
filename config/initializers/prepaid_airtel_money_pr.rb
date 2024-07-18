@@ -1,0 +1,1 @@
+PREPAID_AIRTEL_MONEY_PR_DB = YAML.load_file(File.join(Rails.root, "config", "prepaid_airtel_money_pr.yml"))[Rails.env.to_s]

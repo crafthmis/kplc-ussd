@@ -1,0 +1,2 @@
+module BusinessIntelligence::DashboardHelper
+end

@@ -1,0 +1,80 @@
+<body class="hold-transition login-page jumbotron">
+  <div class="login-box">
+  <div class="login-logo">
+    <a href="#"><b>KPLC</b>SPARK</a>
+  </div>
+  <!-- /.login-logo -->
+  <div class="card">
+    <div class="card-body login-card-body">
+      <p class="login-box-msg">Sign in to start your session</p>
+
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => { :role => 'login'}) do |f| %>
+
+          <%= devise_error_messages! %>
+
+        <div class="input-group mb-3">
+
+           <%= f.email_field :email,placeholder: "Email", class: "form-control"%>
+
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-envelope"></span>
+            </div>
+          </div>
+
+        </div>
+        <div class="input-group mb-3">
+          <%= f.password_field :password,id: "login-password", placeholder: "Password", class: "form-control", autocomplete: "off" %>
+
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+
+          <div class="col-8">
+            <div class="icheck-primary">
+              <input type="checkbox" id="remember">
+              <label for="remember">
+                Remember Me
+              </label>
+            </div>
+          </div>
+          <!-- /.col -->
+          <div class="col-4">
+            <%= f.submit "Sign in",:class=> "btn btn-primary btn-block", id: "login", type: "submit"%>
+
+          </div>
+          <!-- /.col -->
+        </div>
+        <% end %>
+
+      <div class="social-auth-links text-center mb-3">
+        
+       <p>- OR -</p>
+        <a href="/" class="btn btn-block btn-primary">
+          <i class="fab fa-windows"></i> Sign in using Active Directory
+        </a>
+      <!--
+        <a href="#" class="btn btn-block btn-danger">
+          <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
+        </a>-->
+      </div>
+      <!-- /.social-auth-links -->
+      <p class="mt-4">
+        <%= render "users/shared/links" %>
+      </p>
+      <p class="mb-0">
+        <%= flash_messages layout_flash: false %>
+      </p>
+
+
+
+      
+    </div>
+    <!-- /.login-card-body -->
+  </div>
+</div>
+</body>

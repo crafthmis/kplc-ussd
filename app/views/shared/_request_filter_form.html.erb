@@ -1,0 +1,15 @@
+<%= form_for(:search, url: search_path, method: :get) do |form| %>
+	<div class="input-group no-border">
+		     	<%= form.text_field :date_created, class: 'form-control' ,value: date_created_from_parameters %>
+			    <div class="input-group-append">
+
+                     <button class="input-group-text">
+	                    <i class="nc-icon nc-zoom-split"></i>
+	                 </button>
+	            </div>
+	 </div>
+<% end %>
+
+
+
+

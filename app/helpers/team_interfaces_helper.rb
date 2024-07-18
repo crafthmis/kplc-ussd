@@ -1,0 +1,2 @@
+module TeamInterfacesHelper
+end

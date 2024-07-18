@@ -1,0 +1,32 @@
+<div class="page-header">
+  <%= link_to settings_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <%= link_to edit_setting_path(@setting), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
+  <% end %>
+  <h1>Show setting</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Ussd sms:</dt>
+  <dd><%= @setting.ussd_sms %></dd>
+
+  <dt>Prepaid token:</dt>
+  <dd><%= @setting.prepaid_token %></dd>
+
+  <dt>Postpaid token:</dt>
+  <dd><%= @setting.postpaid_token %></dd>
+
+  <dt>Find contractor:</dt>
+  <dd><%= @setting.find_contractor %></dd>
+
+  <dt>Find employee:</dt>
+  <dd><%= @setting.find_employee %></dd>
+
+  <dt>Short code:</dt>
+  <dd><%= @setting.short_code %></dd>
+
+</dl>

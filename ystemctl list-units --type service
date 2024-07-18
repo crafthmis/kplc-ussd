@@ -1,0 +1,93 @@
+  UNIT                       LOAD   ACTIVE SUB       DESCRIPTION
+  proc-sys-fs-binfmt_misc.automount loaded active waiting   Arbitrary Executable File F
+  sys-devices-LNXSYSTM:00-device:00-PNP0A03:00-device:08-VMBUS:01-00000000\x2d0000\x2d8899\x2d0000\x2d000000000000-host2-target2:0:0-2:0:0:0-block-sda-sda1.device loaded active plugged   Virtual_Disk 1
+  sys-devices-LNXSYSTM:00-device:00-PNP0A03:00-device:08-VMBUS:01-00000000\x2d0000\x2d8899\x2d0000\x2d000000000000-host2-target2:0:0-2:0:0:0-block-sda-sda2.device loaded active plugged   Virtual_Disk 2
+  sys-devices-LNXSYSTM:00-device:00-PNP0A03:00-device:08-VMBUS:01-00000000\x2d0000\x2d8899\x2d0000\x2d000000000000-host2-target2:0:0-2:0:0:0-block-sda.device loaded active plugged   Virtual_Disk
+  sys-devices-LNXSYSTM:00-device:00-PNP0A03:00-device:08-VMBUS:01-393c4789\x2d5aaf\x2d4724\x2d9fcd\x2df094b353defe-net-eth1.device loaded active plugged   /sys/devices/LNXSYSTM:00/de
+  sys-devices-LNXSYSTM:00-device:00-PNP0A03:00-device:08-VMBUS:01-71fe0422\x2d4056\x2d4df6\x2d974c\x2da65770875852-net-eth0.device loaded active plugged   /sys/devices/LNXSYSTM:00/de
+  sys-devices-LNXSYSTM:00-device:00-PNP0A03:00-device:08-VMBUS:01-725858c8\x2d0c48\x2d48f3\x2da862\x2dd2e8697a77da-host5-target5:0:0-5:0:0:0-block-sdb-sdb1.device loaded active plugged   Virtual_Disk 1
+  sys-devices-LNXSYSTM:00-device:00-PNP0A03:00-device:08-VMBUS:01-725858c8\x2d0c48\x2d48f3\x2da862\x2dd2e8697a77da-host5-target5:0:0-5:0:0:0-block-sdb.device loaded active plugged   Virtual_Disk
+  sys-devices-pci0000:00-0000:00:07.1-ata2-host1-target1:0:0-1:0:0:0-block-sr0.device loaded active plugged   Virtual_CD
+  sys-devices-platform-floppy.0-block-fd0.device loaded active plugged   /sys/devices/platform/flopp
+  sys-devices-platform-serial8250-tty-ttyS2.device loaded active plugged   /sys/devices/platform/seria
+  sys-devices-platform-serial8250-tty-ttyS3.device loaded active plugged   /sys/devices/platform/seria
+  sys-devices-pnp0-00:03-tty-ttyS0.device loaded active plugged   /sys/devices/pnp0/00:03/tty
+  sys-devices-pnp0-00:04-tty-ttyS1.device loaded active plugged   /sys/devices/pnp0/00:04/tty
+  sys-devices-virtual-block-dm\x2d0.device loaded active plugged   /sys/devices/virtual/block/
+  sys-devices-virtual-block-dm\x2d1.device loaded active plugged   /sys/devices/virtual/block/
+  sys-devices-virtual-block-dm\x2d2.device loaded active plugged   /sys/devices/virtual/block/
+  sys-module-configfs.device loaded active plugged   /sys/module/configfs
+  sys-subsystem-net-devices-eth0.device loaded active plugged   /sys/subsystem/net/devices/
+  sys-subsystem-net-devices-eth1.device loaded active plugged   /sys/subsystem/net/devices/
+  -.mount                    loaded active mounted   /
+  boot.mount                 loaded active mounted   /boot
+  datapool.mount             loaded active mounted   /datapool
+  dev-hugepages.mount        loaded active mounted   Huge Pages File System
+  dev-mqueue.mount           loaded active mounted   POSIX Message Queue File Sy
+  home.mount                 loaded active mounted   /home
+  run-user-1005.mount        loaded active mounted   /run/user/1005
+  run-user-1007.mount        loaded active mounted   /run/user/1007
+  run-user-1014.mount        loaded active mounted   /run/user/1014
+  sys-kernel-config.mount    loaded active mounted   Configuration File System
+  sys-kernel-debug.mount     loaded active mounted   Debug File System
+  var-lib-nfs-rpc_pipefs.mount loaded active mounted   RPC Pipe File System
+  brandbot.path              loaded active waiting   Flexible branding
+  systemd-ask-password-plymouth.path loaded active waiting   Forward Password Requests t
+  systemd-ask-password-wall.path loaded active waiting   Forward Password Requests t
+  session-2.scope            loaded active abandoned Session 2 of user kpl85994
+  session-54.scope           loaded active abandoned Session 54 of user kpl85994
+  session-78.scope           loaded active running   Session 78 of user kpl52709
+  session-80.scope           loaded active abandoned Session 80 of user kpl85994
+  session-81.scope           loaded active running   Session 81 of user kpl85994
+  session-82.scope           loaded active running   Session 82 of user kpl85994
+  session-c1.scope           loaded active abandoned Session c1 of user oracle
+  auditd.service             loaded active running   Security Auditing Service
+  chronyd.service            loaded active running   NTP client/server
+  crond.service              loaded active running   Command Scheduler
+  dbus.service               loaded active running   D-Bus System Message Bus
+  filebeat.service           loaded active running   Filebeat sends log files to
+  firewalld.service          loaded active running   firewalld - dynamic firewal
+  gcstartup.service          loaded active exited    SYSV: Enterprise Manager Ag
+  getty@tty1.service         loaded active running   Getty on tty1
+  gssproxy.service           loaded active running   GSSAPI Proxy Daemon
+  irqbalance.service         loaded active running   irqbalance daemon
+  kdump.service              loaded active exited    Crash recovery kernel armin
+  kmod-static-nodes.service  loaded active exited    Create list of required sta
+  lockgcstartup.service      loaded active exited    SYSV: Enterprise Manager Ag
+  lvm2-lvmetad.service       loaded active running   LVM2 metadata daemon
+  lvm2-monitor.service       loaded active exited    Monitoring of LVM2 mirrors,
+  lvm2-pvscan@8:2.service    loaded active exited    LVM2 PV scan on device 8:2
+  memcached.service          loaded active running   Memcached
+  monit.service              loaded active running   Pro-active monitoring utili
+  network.service            loaded active exited    LSB: Bring up/down networki
+  NetworkManager-wait-online.service loaded active exited    Network Manager Wait Online
+  NetworkManager.service     loaded active running   Network Manager
+  nginx.service              loaded active running   The nginx HTTP and reverse 
+  polkit.service             loaded active running   Authorization Manager
+  postgresql-11.service      loaded active running   PostgreSQL 11 database serv
+  redis.service              loaded active running   Redis persistent key-value 
+  rhel-dmesg.service         loaded active exited    Dump dmesg to /var/log/dmes
+  rhel-domainname.service    loaded active exited    Read and set NIS domainname
+  rhel-import-state.service  loaded active exited    Import network configuratio
+  rhel-readonly.service      loaded active exited    Configure read-only root su
+  rhsmcertd.service          loaded active running   Enable periodic update of e
+  rpcbind.service            loaded active running   RPC bind service
+  rsyslog.service            loaded active running   System Logging Service
+[1;31m●[0m [1;31msidekiq.service           [0m loaded [1;31mfailed failed   [0m sidekiq
+  snmpd.service              loaded active running   Simple Network Management P
+  sshd.service               loaded active running   OpenSSH server daemon
+  swiagentd.service          loaded active running   SolarWinds Agent Service
+  sysstat.service            loaded active exited    Resets System Activity Logs
+  systemd-journal-flush.service loaded active exited    Flush Journal to Persistent
+  systemd-journald.service   loaded active running   Journal Service
+  systemd-logind.service     loaded active running   Login Service
+  systemd-random-seed.service loaded active exited    Load/Save Random Seed
+  systemd-remount-fs.service loaded active exited    Remount Root and Kernel Fil
+  systemd-sysctl.service     loaded active exited    Apply Kernel Variables
+  systemd-tmpfiles-setup-dev.service loaded active exited    Create Static Device Nodes 
+  systemd-tmpfiles-setup.service loaded active exited    Create Volatile Files and D
+  systemd-udev-trigger.service loaded active exited    udev Coldplug all Devices
+  systemd-udevd.service      loaded active running   udev Kernel Device Manager
+  systemd-update-utmp.service loaded active exited    Update UTMP about System Bo
+  systemd-user-sessions.service loaded active exited    Permit User Sessions
+  systemd-vconsole-setup.service loaded activ

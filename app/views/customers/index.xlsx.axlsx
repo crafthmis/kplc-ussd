@@ -1,0 +1,9 @@
+wb = xlsx_package.workbook
+wb.add_worksheet(name: "Customers") do |sheet|
+  # Create the header row
+  sheet.add_row ["Number", "Created At"]
+  # Create entries for each item
+  @customers.each do |item|
+    sheet.add_row [item.number, item.created_at]
+  end
+end

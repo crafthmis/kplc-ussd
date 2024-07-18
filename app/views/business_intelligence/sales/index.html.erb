@@ -1,0 +1,55 @@
+<% content_for :head  do %>
+  <%= javascript_include_tag 'business_intelligence/sales'%>
+<%end%>
+
+
+    <!-- Main content -->
+      <div class="container-fluid">
+        <!-- Small boxes (Stat box) -->
+         <%= render "top_barner" %>
+       
+        <!-- /.row -->
+        <!-- Main row -->
+        <div class="row">
+          <!-- Left col -->
+  <section class="col-lg-7 connectedSortable">
+           <%#= render(:partial => "weekly_prepaid_total" ,locals: {title: "Weekly Total",data: @weekly_unit }) %>
+           <%#= render(:partial => "weekly_prepaid_cash" ,locals: {title: "Energy Annual"}) %>
+           <%#= render(:partial => "sales_chart" ,locals: {title: "Sales Report"}) %>
+  </section>
+
+<section class="col-lg-5 connectedSortable">
+	<%#= render(:partial => "sales_chart" ,locals: {title: "Sales Report"}) %>
+    <%#= render(:partial => "new_connection" ,locals: {title: "New Connections"}) %>
+     <%#= render(:partial => "line_chart",locals: {title: "Ims Indices"})%>
+</section>
+
+
+          <!-- /.Left col -->
+          <!-- right col (We are only adding the ID to make the widgets sortable)-->
+          <!-- right col -->
+        </div>
+        <!-- /.row (main row) -->
+      </div><!-- /.container-fluid -->
+
+
+
+<div class="page-header">
+  <h1>BusinessIntelligence::Sales#index</h1>
+</div>
+<p>Find me in app/views/business_intelligence/sales/index.html.erb</p>
+<h3>Weekly total</h3>
+<h3>Prepaid Weekely Unit sale</h3>
+<%=  @weekly_prepaid_unit_sale.inspect %>
+<h3>Prepaid Weekely ksh </h3>
+<%=  @weekly_prepaid_cash_sale.inspect %>
+<h3>Daily Energy Purchase</h3>
+<%=  @daily_energy_purchase.inspect %>
+
+<h3>Postpaid amount target </h3>
+<%=  @postpaid_unit_target.inspect %>
+
+<h3>Postpaid unit target</h3>
+<%=  @postpaid_amount_target.inspect %>
+
+

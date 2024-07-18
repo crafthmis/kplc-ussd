@@ -1,0 +1,71 @@
+    <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title ">Authorized Users</h4>
+                  <p class="card-category">Below users have login credentials to this system.</p>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+
+			                    <table class="table table-striped table-hover">
+                          <thead>
+                            <tr>
+                              <th>Email</th>
+                              <th>Staff No.</th>
+                              <th>Phone No.</th>
+                              <th>Invitation sent by</th>
+                              <th>Invitation state</th>
+                              <th></th>
+                              <th></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                               <% User.where.not('invitation_created_at' => nil).each do |user| %>
+                                <tr>
+                                    <td><%= user.try(:email)%></td>
+                                    <td><%= user.try(:username)%></td>
+                                    <td><%= user.try(:phone)%></td>
+
+                                    <td>
+
+
+                                    	 <% if User.exists?(user.invited_by_id) %>
+                                    	 <%= User.find(user.invited_by_id).email %>
+                                    	 <%else%>
+                                    	 null
+                                    	 <%end%>
+
+                                    		
+                                    	</td>
+                                    <td>
+                                    <% if user.invitation_accepted_at %>
+                                        Accepted
+                                    <%else%>
+                                       Pending
+                                    <%end%>
+                                    <td>
+
+								 <td><%= link_to "Rolify",rolify_user_path(user) %></td>
+								 <td><%= link_to "Remove",delete_user_path(user) %></td>
+ 
+                                </tr>
+                              <%end%>
+                          </tbody>
+                        </table>
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+           </div>
+       </div>
+
+
+
+
+
+

@@ -1,0 +1,3 @@
+class Survey < Campaign 
+
+end

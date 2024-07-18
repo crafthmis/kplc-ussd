@@ -1,0 +1,28 @@
+<li class="nav-item">
+    <%= link_to application_analytics_dashboard_index_path ,class: "nav-link #{params['controller'] == "application_analytics/dashboard" ? 'active' : ''}" do %>
+    <i class="nav-icon fas fa-chart-line"></i>
+    <p>Dashboard</p>
+    <%end%>
+</li>
+
+
+
+   <%= render "shared/application_analytics/prepaid" %>
+   <%= render "shared/application_analytics/postpaid" %>
+   <%= render "shared/application_analytics/ussd" %>
+   <%= render "shared/application_analytics/sms" %>
+   <%= render "shared/application_analytics/my_app" %>
+
+<li class="nav-item">
+      <%= link_to monitor_index_path ,class: "nav-link #{params['controller'] == "monitor" ? 'active' : ''}" do %>
+      <i class="fas fa-diagnoses nav-icon"></i>
+        Monitor
+      <%end%>
+  </li>
+
+
+
+
+
+
+   

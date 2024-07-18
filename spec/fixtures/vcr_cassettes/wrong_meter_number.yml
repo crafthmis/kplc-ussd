@@ -1,0 +1,126 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://incms.kplc.local/InCMS-ss-server/services/publicData/?serialNumberMeter=24689546789
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 422
+      message: ''
+    headers:
+      Date:
+      - Fri, 28 Feb 2020 13:11:31 GMT
+      Server:
+      - Apache/2.4.29 (Unix) OpenSSL/1.0.2n
+      Content-Length:
+      - '236'
+      X-Oracle-Dms-Ecid:
+      - 24fbc6bb-3742-4d60-89eb-2d784717a646-002587bb
+      Access-Control-Allow-Headers:
+      - origin, content-type, accept, authorization
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, OPTIONS, HEAD,PATCH
+      Access-Control-Allow-Credentials:
+      - 'true'
+      X-Oracle-Dms-Rid:
+      - '0'
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"httpStatus":422,"code":"SS000107","msgUser":"InCMS-BL-SS000107. Error
+        consumption incompatible with tariff.","helpLink":"SS000107","msgDeveloper":"The
+        meter sereial number doesn''t exist.","errorSequence":"-7e299bf6:1708bd7f8de:-796d"}'
+    http_version: null
+  recorded_at: Fri, 28 Feb 2020 13:11:09 GMT
+- request:
+    method: get
+    uri: http://incms.kplc.local/InCMS-ss-server/services/publicData/?serialNumberMeter=24689546789
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 422
+      message: ''
+    headers:
+      Date:
+      - Fri, 28 Feb 2020 13:11:31 GMT
+      Server:
+      - Apache/2.4.29 (Unix) OpenSSL/1.0.2n
+      Content-Length:
+      - '236'
+      X-Oracle-Dms-Ecid:
+      - 24fbc6bb-3742-4d60-89eb-2d784717a646-002587c7
+      Access-Control-Allow-Headers:
+      - origin, content-type, accept, authorization
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, OPTIONS, HEAD,PATCH
+      Access-Control-Allow-Credentials:
+      - 'true'
+      X-Oracle-Dms-Rid:
+      - '0'
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"httpStatus":422,"code":"SS000107","msgUser":"InCMS-BL-SS000107. Error
+        consumption incompatible with tariff.","helpLink":"SS000107","msgDeveloper":"The
+        meter sereial number doesn''t exist.","errorSequence":"-7e299bf6:1708bd7f8de:-796c"}'
+    http_version: null
+  recorded_at: Fri, 28 Feb 2020 13:11:09 GMT
+- request:
+    method: post
+    uri: http://172.16.4.53:8080/api/send-sms
+    body:
+      encoding: UTF-8
+      string: '{"messages":"The meter serial number doesn''t exist.","mobile":["254712829808"],"sms_ID":1}'
+    headers:
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - POST, PUT, GET, OPTIONS, DELETE
+      Access-Control-Max-Age:
+      - '3600'
+      Access-Control-Allow-Headers:
+      - Content-Type, Authorization, Content-Length, X-Requested-With
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Fri, 28 Feb 2020 13:07:44 GMT
+    body:
+      encoding: UTF-8
+      string: '{"code":200,"message":"Success","data":null,"timestamp":1582895264455}'
+    http_version: null
+  recorded_at: Fri, 28 Feb 2020 13:11:09 GMT
+recorded_with: VCR 5.1.0

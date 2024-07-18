@@ -1,0 +1,97 @@
+
+
+<%= form_for(team_sms_manager_audience_path(current_team, @audience), html: { class: "form-horizontal", role: "form" }) do |f| %>
+
+
+
+ <div class="row">
+        <div class="col-md-5">
+          <div class="card card-primary">
+            <div class="card-header">
+              <h3 class="card-title">Audience</h3>
+
+              <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                  <i class="fas fa-minus"></i></button>
+              </div>
+            </div>
+            <div class="card-body">
+  
+
+              <% if @audience.errors.any? %>
+                <div class="alert alert-danger alert-dismissable" role="alert">
+                  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                  <h4><%= pluralize(@audience.errors.count, "error") %> prohibited this audience from being saved:</h4>
+
+                  <ul>
+                  <% @audience.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                  <% end %>
+                  </ul>
+                </div>
+              <% end %>
+
+
+
+
+              <div class="form-group">
+                <%= f.text_field :name, class: "form-control",placeholder: "Audience Name" %>
+                <%= f.hidden_field :organization_id, value: current_team.organization_id %>
+                <%= f.hidden_field :team_id %>
+
+
+              </div>
+                   
+             </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+        </div>
+        <div class="col-md-7">
+          <div class="card card-secondary">
+            <div class="card-header">
+              <h3 class="card-title">Subscribers</h3>
+
+              <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                  <i class="fas fa-minus"></i></button>
+              </div>
+            </div>
+            <div class="card-body">
+
+
+                <%= f.nested_fields_for :subscribers do |ff| %>
+                   <% unless  ff.object.contact %>
+                     <% ff.object.build_contact(organization_id: current_organization.id) %>
+                   <% end %>
+                     <%= ff.hidden_field :organization_id ,value: current_organization.id %>
+
+                   <%= render "subscriber", ff: ff %>
+
+
+                   <span class="float-right">
+                     <%= ff.remove_nested_fields_link do %>
+                        Remove Subscriber
+                        <i class="fas fa-phone-slash"></i>
+                     <%end%>
+                   </span>
+
+
+               <%end%>
+               <%= f.add_nested_fields_link :subscribers, "Add Subscriber" %>
+
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+        </div>
+      </div>
+
+
+    <div class="row">
+        <div class="col-12">
+            <%= f.submit class: "btn btn-success float-right" %>
+        </div>
+      </div>
+
+<% end %>

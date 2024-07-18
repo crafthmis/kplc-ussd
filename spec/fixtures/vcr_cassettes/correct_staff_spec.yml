@@ -1,0 +1,37 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://172.16.4.53:8080/api/send-sms
+    body:
+      encoding: UTF-8
+      string: '{"messages":"KPL87028,Akello Otieno Duncan,ID NO.30054549 is a Kenya
+        Power Employee.","mobile":["254712829808"],"sms_ID":10}'
+    headers:
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - POST, PUT, GET, OPTIONS, DELETE
+      Access-Control-Max-Age:
+      - '3600'
+      Access-Control-Allow-Headers:
+      - Content-Type, Authorization, Content-Length, X-Requested-With
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Fri, 13 Mar 2020 04:33:22 GMT
+    body:
+      encoding: UTF-8
+      string: '{"code":200,"message":"Success","data":null,"timestamp":1584074002412}'
+    http_version: null
+  recorded_at: Fri, 13 Mar 2020 04:37:04 GMT
+recorded_with: VCR 5.1.0

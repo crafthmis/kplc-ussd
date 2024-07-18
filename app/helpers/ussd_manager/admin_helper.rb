@@ -1,0 +1,2 @@
+module UssdManager::AdminHelper
+end

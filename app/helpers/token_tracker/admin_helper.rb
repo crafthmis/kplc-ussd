@@ -1,0 +1,2 @@
+module TokenTracker::AdminHelper
+end

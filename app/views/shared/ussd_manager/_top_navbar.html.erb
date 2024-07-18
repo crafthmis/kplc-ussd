@@ -1,0 +1,85 @@
+        <!-- <li class="nav-item dropdown">
+            <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">Prepaid</a>
+            <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
+              <li><a href="#" class="dropdown-item">Buy Token</a></li>
+              <li><a href="#" class="dropdown-item">Latest Token</a></li>
+               End Level two 
+            </ul>
+          </li>
+
+
+          <li class="nav-item dropdown">
+            <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">Postpaid</a>
+            <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
+              <li><a href="#" class="dropdown-item">My Bill</a></li>
+              <li><a href="#" class="dropdown-item">Pay Bill</a></li>
+              <li><a href="#" class="dropdown-item">Bill Alerts</a></li>
+              <li><a href="#" class="dropdown-item">Self Reading</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">Power Failure</a>
+            <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
+              <li><a href="#" class="dropdown-item">Prepaid</a></li>
+              <li><a href="#" class="dropdown-item">Postpaid</a></li>
+               End Level two 
+            </ul>
+          </li>
+
+         <li class="nav-item dropdown">
+            <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">Jua For Sure</a>
+            <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
+              <li><a href="#" class="dropdown-item">Contractor</a></li>
+              <li><a href="#" class="dropdown-item">Employee</a></li>
+               End Level two
+            </ul>
+          </li>-->
+
+          <li class="nav-item dropdown">
+            <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">Report Incidences</a>
+            <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
+
+<!--
+           <li>
+                <%#= link_to high_bill_team_ussd_manager_complaints_path(current_team) ,class: "dropdown-item" do %>
+                  High Bill
+                <%#end%>
+            </li>
+            
+            <li>
+                <%#= link_to faulty_meters_team_ussd_manager_complaints_path(current_team) ,class: "dropdown-item" do %>
+                Faulty Meter
+                <%#end%>
+            </li>-->
+
+            <li>
+                <%= link_to team_ussd_manager_incidences_path(current_team) ,class: "dropdown-item" do %>
+                 Power Safety
+                <%end%>
+            </li>
+            
+
+
+           <li>
+                <%= link_to report_employee_team_ussd_manager_complaints_path(current_team) ,class: "dropdown-item" do %>
+                Employee Misconduct
+                <%end%>
+            </li>
+
+
+
+
+              <!-- End Level two -->
+            </ul>
+          </li>
+
+
+      <!--  <li class="nav-item dropdown">
+            <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">Manage Accounts</a>
+            <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
+              <li><a href="#" class="dropdown-item">Added</a></li>
+              <li><a href="#" class="dropdown-item">Removed</a></li>
+               End Level two 
+            </ul>
+          </li>-->

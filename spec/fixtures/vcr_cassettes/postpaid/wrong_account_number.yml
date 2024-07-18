@@ -1,0 +1,48 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://apim.kplc.local/accounts/2.0.1/4704222234/balance
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 422
+      message: Unprocessable Entity
+    headers:
+      Date:
+      - Mon, 16 Mar 2020 03:02:15 GMT
+      Server:
+      - Apache/2.4.29 (Unix) OpenSSL/1.0.2n
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, OPTIONS, HEAD,PATCH
+      X-Oracle-Dms-Ecid:
+      - 31b32aeb-f1fa-4db9-a03b-760b66db7c47-00120625
+      X-Oracle-Dms-Rid:
+      - '0'
+      Access-Control-Allow-Headers:
+      - origin, content-type, accept, authorization
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"httpStatus":422,"code":"SS000106","msgUser":"InCMS-BL-SS000106. The
+        account number doesn''t exist.","helpLink":"SS000106","msgDeveloper":"The
+        account number doesn''t exist.","errorSequence":"53e432d2:170d3d3c1ae:4410"}'
+    http_version: null
+  recorded_at: Mon, 16 Mar 2020 03:58:21 GMT
+recorded_with: VCR 5.1.0

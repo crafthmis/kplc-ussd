@@ -1,0 +1,4 @@
+module BusinessIntelligence::AdminHelper
+
+
+end

@@ -1,0 +1,61 @@
+<body class="hold-transition login-page jumbotron">
+<div class="login-box">
+  <div class="login-logo">
+    <a href="#"><b>KPLC</b>SPARK</a>
+  </div>
+  <!-- /.login-logo -->
+  <div class="card">
+    <div class="card-body login-card-body">
+      <p class="login-box-msg">You are only one step a way from your new password, recover your password now.</p>
+
+ <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+  <%= devise_error_messages! %>
+  <%= f.hidden_field :reset_password_token %>
+       
+
+     <div class="d-flex justify-content-center ">
+        <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em><br />
+        <% end %>
+     </div>
+
+        <div class="input-group mb-3">
+           <%= f.password_field :password, autofocus: true, autocomplete: "off",placeholder: "New password", class: "form-control"  %>
+
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <%= f.password_field :password_confirmation, autocomplete: "off",placeholder: "Confirm new password", class: "form-control" %>
+
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+             <%= f.submit "Change password" ,:class=> "btn btn-primary btn-block", id: "login"%>
+          </div>
+          <!-- /.col -->
+        </div>
+
+      <%end%>
+
+      <p class="mt-4">
+        <%= render "users/shared/links" %>
+      </p>
+      <p class="mb-0">
+        <%= flash_messages layout_flash: false %>
+      </p>
+
+    </div>
+    <!-- /.login-card-body -->
+  </div>
+</div>
+<!-- /.login-box -->
+</body>

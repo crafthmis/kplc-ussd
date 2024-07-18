@@ -1,0 +1,50 @@
+   <div class="col-12 col-md-12 col-lg-4 order-1 order-md-2">
+              <h3 class="text-primary"><i class="fas fa-user-friends"></i></i></i><%= @team.name %></h3>
+              <p class="text-muted"> <%= @team.description %></p>
+              <br>
+
+              <div class="text-muted">
+                <p class="text-sm">Team Name
+                  <b class="d-block"><%= @team.name %></b>
+                </p>
+                <p class="text-sm">Team Owner
+                  <b class="d-block"><%= @team.owner.email %></b>
+                </p>
+              </div>
+
+           <h5 class="mt-5 text-muted">Current Members</h5>
+              <ul class="list-unstyled">
+                <li><%= @team.owner.email %>&nbsp;<b>Owner</b></li>
+                 <%= content_tag_for(:tr, @members) do |member| %>
+                    <li>
+                      <a href="" class="btn-link text-secondary"><i class="far fa-message"></i><%=member.email %></a>
+                    </li>
+                 <%end%>
+           </ul>
+
+
+            <h5 class="mt-5 text-muted">Application Interfaces</h5>
+                 <ul class="list-unstyled">
+                    <% @team.get_url.each do |app_name,url| %>
+                      <% dashboard_url = send"#{url}", @team %>
+                      <li>
+                        <%= link_to dashboard_url,class: "btn-link" do %> 
+                          <i class="fas fa-sign-in-alt"></i>
+                          <%= app_name %>
+
+                        <%end%>
+                      </li>
+                    <%end%>
+                 </ul>
+
+
+       </div>
+
+
+
+
+
+
+
+
+    

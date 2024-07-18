@@ -1,0 +1,9 @@
+    <section class="col-lg-7 connectedSortable">
+          <%= render "sales_chart" %>
+          <h3>Energy annual</h3>
+          <%= render "energy_chart" %>
+          <h3>New Connections</h3>
+          <%= render "new_connection" %>
+          <h3>IMs Incidences</h3>
+         <%= render(:partial => "line_chart" ,locals: {title: "Ims Indices"}) %>
+    </section>

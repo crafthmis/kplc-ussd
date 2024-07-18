@@ -1,0 +1,12 @@
+<div class="nav-tabs-navigation cover">
+    <div class="nav-tabs-wrapper">
+	<%= tabs_tag(:builder => CustomersHelper::MenuTabBuilder,:open_tabs => {:id => "tabs" ,:class => "nav nav-tabs cover", 'data-tabs'.to_s => "tabs"} ) do |tab| %>
+	  <%= tab.billing 'Analytics', billing_index_path %>
+	  <%= tab.prepaid 'Prepaid', billing_prepaid_path %>
+	  <%= tab.postpaid 'Postpaid', billing_postpaid_path %>
+	<% end %>
+	</div>
+</div>
+
+
+

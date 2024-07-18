@@ -1,0 +1,38 @@
+
+   <div class="row">
+                <div class="col-12">
+                  <h4>Recent Activity</h4>
+
+
+        <%= content_tag_for(:tr, @complaints) do |complaint| %>
+                    <div class="post">
+                      <div class="user-block">
+                        <%=image_tag("avatar.png",alt: "Avatar", class: "table-avatar") %>
+                        <span class="username">
+
+                          <a href="#"><%= complaint.customer.number %></a>
+
+                        </span>
+                        <span class="description">Reported - <%= time_ago_in_words(complaint.created_at) %></span>
+                      </div>
+                      <!-- /.user-block -->
+                      <p>
+                        <% if complaint.complaintable_type != "Employee" %>
+                           <%= complaint.complaintable.try(:number) %>
+                        <%else%>
+                           <%= complaint.complaintable.try(:staff_number) %>
+                        <%end%>
+
+                        
+                      </p>
+
+                      <p>
+                       <%= complaint.info %>
+                      </p>
+                    </div>
+        <%end%>
+
+   
+            </div>
+         </div>
+

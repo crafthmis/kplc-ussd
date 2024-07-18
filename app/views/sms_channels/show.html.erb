@@ -1,0 +1,29 @@
+<div class="page-header">
+  <%= link_to sms_channels_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <%= link_to edit_sms_channel_path(@sms_channel), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
+  <% end %>
+  <h1>Show sms_channel</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Type:</dt>
+  <dd><%= @sms_channel.type %></dd>
+
+  <dt>Shortcode:</dt>
+  <dd><%= @sms_channel.shortcode %></dd>
+
+  <dt>Alphanumeric:</dt>
+  <dd><%= @sms_channel.alphanumeric %></dd>
+
+  <dt>Keyword:</dt>
+  <dd><%= @sms_channel.keyword %></dd>
+
+  <dt>Organization:</dt>
+  <dd><%= @sms_channel.organization %></dd>
+
+</dl>

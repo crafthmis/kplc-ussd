@@ -1,0 +1,27 @@
+
+        <li class="nav-item dropdown">
+            <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">Debt Management</a>
+            <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
+                 <li>
+                    <%= link_to team_business_intelligence_sales_index_path(current_team)  , class: "dropdown-item"  do %>
+                       Cash collection Report
+                    <%end%>
+                  </li>
+
+                  <li>
+                    <%= link_to team_business_intelligence_unserved_energy_index_path(current_team)  ,class: "dropdown-item" do %>
+                       Debt Reduction
+                    <%end%>
+                  </li>
+
+                  <li>
+                    <%= link_to team_business_intelligence_connectivity_index_path(current_team)  ,class: "dropdown-item" do %>
+                      Debt Status
+                    <%end%>
+                  </li>
+
+
+
+              <!-- End Level two -->
+            </ul>
+          </li>

@@ -1,0 +1,2 @@
+module Money::PrepaidHelper
+end

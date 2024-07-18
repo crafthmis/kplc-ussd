@@ -1,0 +1,2 @@
+module BusinessIntelligence::FaultyTransformersHelper
+end

@@ -1,0 +1,105 @@
+<!-- customercare@kplc.co.ke -->
+<!-- web based crm --> 
+<!-- control centerts -->
+
+
+
+
+
+
+
+
+<% @minititle = "Analytics Dashboard" %>
+   <div class="container-fluid">
+        <!-- Info boxes -->
+           <!-- /.row -->
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <h5 class="card-title">Daily Recap Report [Time in UTC]</h5>
+
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-tool dropdown-toggle" data-toggle="dropdown">
+                      <i class="fas fa-wrench"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right" role="menu">
+                      <a href="#" class="dropdown-item">Action</a>
+                      <a href="#" class="dropdown-item">Another action</a>
+                      <a href="#" class="dropdown-item">Something else here</a>
+                      <a class="dropdown-divider"></a>
+                      <a href="#" class="dropdown-item">Separated link</a>
+                    </div>
+                  </div>
+                  <button type="button" class="btn btn-tool" data-card-widget="remove">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-8">
+                    <p class="text-center">
+                      <strong>Prepaid Requests</strong>
+                    </p>
+
+                    <div class="chart">
+                      <!-- Sales Chart Canvas -->
+
+                      <%#= content_tag :div, "",id: "request_labels",data: {requests: request_by_hour(@request_chart,@prepaid,@postpaid,@power_failure,@jua_for_sure,@period,@manage_account)} %>
+                      <%#= pie_chart Confirmation.created_today.group(:status).count %>
+
+                      <%= line_chart @chart_data %>
+                    </div>
+                    <!-- /.chart-responsive -->
+                  </div>
+                  <!-- /.col -->
+                  <div class="col-md-4">
+                    <p class="text-center">
+                      <strong>Prepaid Requests</strong>
+                    </p>
+
+                       <%= pie_chart money_prepaid_safaricom_status_path  %>
+                       <%#= column_chart request_chart_data(@request_chart,@customer_chart)   %>
+
+
+                  </div>
+                  <!-- /.col -->
+                </div>
+                <!-- /.row -->
+              </div>
+
+
+               <div class="card-body">
+            
+                <!-- /.row -->
+              </div>
+
+
+
+              
+
+
+              <!-- ./card-body -->
+            </div>
+            <!-- /.card -->
+
+
+
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+
+     
+        <!-- /.row -->
+      </div><!--/. container-fluid -->
+
+
+

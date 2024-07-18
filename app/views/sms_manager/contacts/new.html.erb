@@ -1,0 +1,19 @@
+<div class="page-header">
+  <%= link_to team_sms_manager_contacts_path(@team), class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <h1>New sms_manager_contact</h1>
+</div>
+
+
+<%#= render 'form' %>
+
+
+<h2>Import Contacts</h2>
+
+<%= form_tag import_team_sms_manager_contacts_path(@team), multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import" %>
+<% end %>
+

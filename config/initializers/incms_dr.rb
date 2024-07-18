@@ -1,0 +1,1 @@
+INCMS_DR_DB = YAML.load_file(File.join(Rails.root, "config", "incms_dr_db.yml"))[Rails.env.to_s]

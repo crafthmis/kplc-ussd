@@ -1,0 +1,2 @@
+module UssdManager::DashboardHelper
+end

@@ -1,0 +1,2 @@
+module SmsManager::SmsChannelsHelper
+end

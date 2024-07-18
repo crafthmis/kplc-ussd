@@ -1,0 +1,24 @@
+
+	 <%= ff.fields_for(:contact) do |contact_form| %>
+			  <div class="row">
+		         <div class="col-3">
+		             <%= contact_form.text_field :first_name, placeholder: "First name",class: 'form-control' %>
+		             <%= contact_form.hidden_field :organization_id ,value: current_organization.id %>
+		          </div>
+
+		         <div class="col-3">
+		             <%= contact_form.text_field :last_name, placeholder: "Last name",class: 'form-control' %>
+		          </div>
+
+
+		          <div class="col-6">
+		            <div class="input-group">
+		                  <div class="input-group-prepend">
+		                    <span class="input-group-text">+254</span>
+		                  </div>
+		                  <%= contact_form.text_field :number, class: 'form-control' %>
+		                </div>
+		          </div>
+		     </div>
+	   <%end%>
+

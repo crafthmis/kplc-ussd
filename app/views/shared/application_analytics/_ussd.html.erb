@@ -1,0 +1,26 @@
+      <li class="nav-item has-treeview">
+        <a href="#" class="nav-link">
+          <i class="nav-icon fas fa-ruler-vertical"></i>
+          <p>
+            USSD
+            <i class="right fas fa-angle-left"></i>
+          </p>
+        </a>
+        <ul class="nav nav-treeview">
+
+
+          <li class="nav-item">
+             <%= link_to code_sms_safaricom_path ,class: "nav-link #{params['controller'] == "settings" ? 'active' : ''}" do %>
+                 <i class="fas fa-ruler-vertical nav-icon"></i>
+                Safaricom
+            <%end%>
+            </li>
+          <li class="nav-item">
+            <%= link_to code_sms_equitell_path ,class: "nav-link #{params['controller'] == "settings" ? 'active' : ''}" do %>
+                <i class="fas fa-ruler-vertical nav-icon"></i>
+                Equitell
+            <%end%>
+          </li>
+
+        </ul>
+      </li>

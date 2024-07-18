@@ -1,0 +1,137 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic dmoyN0RoQXRNVWpQOWViUlVpZWhrakQxbU9zTVI1bTk6M3J2SXlqYUF5SmxkZk8wMg==
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 24 Feb 2020 18:25:03 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '113'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-store
+    body:
+      encoding: UTF-8
+      string: "{\n            \"access_token\": \"1iJpIk00y6I90D5INpGBMJ1ewDTv\",\n
+        \           \"expires_in\": \"3599\"\n        }\n        "
+    http_version: null
+  recorded_at: Mon, 24 Feb 2020 18:25:03 GMT
+- request:
+    method: post
+    uri: https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest
+    body:
+      encoding: UTF-8
+      string: '{"BusinessShortCode":"174379","Password":"MTc0Mzc5YmZiMjc5ZjlhYTliZGJjZjE1OGU5N2RkNzFhNDY3Y2QyZTBjODkzMDU5YjEwZjc4ZTZiNzJhZGExZWQyYzkxOTIwMjAwMjI0MjEyNTAz","Timestamp":"20200224212503","TransactionType":"CustomerPayBillOnline","Amount":"10","PartyA":"254712829808","PartyB":"174379","PhoneNumber":"254712829808","CallBackURL":"https://d918dd48.ngrok.io/api/v1/mpesa/checkout_callback","AccountReference":"14243784684","TransactionDesc":"KPLC
+        USSD Purchase Token"}'
+    headers:
+      Authorization:
+      - Bearer 1iJpIk00y6I90D5INpGBMJ1ewDTv
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 24 Feb 2020 18:25:05 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '316'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-store
+    body:
+      encoding: UTF-8
+      string: "{\n            \"MerchantRequestID\":\"30176-14023343-1\",\n            \"CheckoutRequestID\":\"ws_CO_240220202125046334\",\n
+        \           \"ResponseCode\": \"0\",\n            \"ResponseDescription\":\"Success.
+        Request accepted for processing\",\n            \"CustomerMessage\":\"Success.
+        Request accepted for processing\"\n        }\n        "
+    http_version: null
+  recorded_at: Mon, 24 Feb 2020 18:25:05 GMT
+- request:
+    method: get
+    uri: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic dmoyN0RoQXRNVWpQOWViUlVpZWhrakQxbU9zTVI1bTk6M3J2SXlqYUF5SmxkZk8wMg==
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 24 Feb 2020 18:25:05 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '113'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-store
+    body:
+      encoding: UTF-8
+      string: "{\n            \"access_token\": \"oS7hMvVGaeO6DQy9zidObMyzauvY\",\n
+        \           \"expires_in\": \"3599\"\n        }\n        "
+    http_version: null
+  recorded_at: Mon, 24 Feb 2020 18:25:05 GMT
+- request:
+    method: post
+    uri: https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest
+    body:
+      encoding: UTF-8
+      string: '{"BusinessShortCode":"174379","Password":"MTc0Mzc5YmZiMjc5ZjlhYTliZGJjZjE1OGU5N2RkNzFhNDY3Y2QyZTBjODkzMDU5YjEwZjc4ZTZiNzJhZGExZWQyYzkxOTIwMjAwMjI0MjEyNTA1","Timestamp":"20200224212505","TransactionType":"CustomerPayBillOnline","Amount":"10","PartyA":"254712829808","PartyB":"174379","PhoneNumber":"254712829808","CallBackURL":"https://d918dd48.ngrok.io/api/v1/mpesa/checkout_callback","AccountReference":"14243784684","TransactionDesc":"KPLC
+        USSD Purchase Token"}'
+    headers:
+      Authorization:
+      - Bearer oS7hMvVGaeO6DQy9zidObMyzauvY
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 500
+      message: Server Error
+    headers:
+      Date:
+      - Mon, 24 Feb 2020 18:25:06 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '261'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-store
+    body:
+      encoding: UTF-8
+      string: "{\n                    \"requestId\":\"16104-12955139-1\",\n                    \"errorCode\":
+        \"500.001.1001\",\n                    \"errorMessage\": \"Unable to lock
+        subscriber, a transaction is already in process for the current subscriber\"\n
+        \               }\n            "
+    http_version: null
+  recorded_at: Mon, 24 Feb 2020 18:25:06 GMT
+recorded_with: VCR 5.1.0

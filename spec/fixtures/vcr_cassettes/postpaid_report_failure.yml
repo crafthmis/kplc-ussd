@@ -1,0 +1,33 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://drsc01-ingriddb-scan.kplc.local:8090/KEIOPEN/iopen/lodge/47042221/SMS/254712829808/1/1/poweroutage/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Content-Type:
+      - text/plain
+      Content-Length:
+      - '84'
+      Date:
+      - Fri, 13 Mar 2020 07:11:32 GMT
+    body:
+      encoding: UTF-8
+      string: 'A new complaint with the referrence 5269556 has been logged for account
+        no: 47042221'
+    http_version: null
+  recorded_at: Fri, 13 Mar 2020 07:11:06 GMT
+recorded_with: VCR 5.1.0

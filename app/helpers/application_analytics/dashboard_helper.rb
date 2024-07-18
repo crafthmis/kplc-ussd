@@ -1,0 +1,2 @@
+module ApplicationAnalytics::DashboardHelper
+end

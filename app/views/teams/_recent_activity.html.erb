@@ -1,0 +1,29 @@
+   <div class="row">
+                <div class="col-12">
+                  <h4>Recent Activity</h4>
+
+
+        <% @activities.each do |activity| %>
+               <div class="post">
+                      <div class="user-block">
+                        <%=image_tag("avatar.png",alt: "Avatar", class: "table-avatar") %>
+                        <span class="username">
+                          <a href="#"><%= link_to activity.owner.name ,activity.owner if activity.owner %></a>
+
+                        </span>
+                        <span class="description">Shared publicly - <%= time_ago_in_words(activity.created_at) %></span>
+                      </div>
+                      <!-- /.user-block -->
+                      <p>
+                        <%= activity.key %>
+                      </p>
+
+                      <p>
+                        <a href="#" class="link-black text-sm"><i class="fas fa-link mr-1"></i> Demo File 1 v2</a>
+                      </p>
+                </div>
+        <%end%>
+
+   
+        </div>
+     </div>

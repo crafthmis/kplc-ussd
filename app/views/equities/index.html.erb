@@ -1,0 +1,35 @@
+<div class="page-header">
+  <%= link_to new_equity_path, class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-plus"></span>
+    New Equity
+  <% end %>
+  <h1>Listing equities</h1>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+            <th>Customer</th>
+            <th>Amount</th>
+            <th>Status</th>
+            <th>Equitable</th>
+            <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= content_tag_for(:tr, @equities) do |equity| %>
+            <td><%= equity.customer %></td>
+            <td><%= equity.amount %></td>
+            <td><%= equity.status %></td>
+            <td><%= equity.equitable %></td>
+            <td><%= link_to 'Show', equity %></td>
+        <td><%= link_to 'Edit', edit_equity_path(equity) %></td>
+        <td><%= link_to 'Destroy', equity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </tbody>
+  </table>
+</div>

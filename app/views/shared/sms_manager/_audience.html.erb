@@ -1,0 +1,26 @@
+     <li class="nav-item dropdown">
+        <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">Audience</a>
+        <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
+
+           <li>
+                <%= link_to team_sms_manager_audiences_path(current_team) ,class: "dropdown-item" do %>
+                   All Audiences
+                <%end%>
+            </li>
+            
+            <li>
+                <%= link_to new_team_sms_manager_audience_path(current_team) ,class: "dropdown-item" do %>
+                    New Audience
+                <%end%>
+            </li>
+
+
+        </ul>
+      </li>
+
+
+
+
+
+
+

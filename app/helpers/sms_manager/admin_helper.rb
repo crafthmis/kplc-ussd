@@ -1,0 +1,2 @@
+module SmsManager::AdminHelper
+end

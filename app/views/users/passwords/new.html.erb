@@ -1,0 +1,45 @@
+<body class="hold-transition login-page jumbotron">
+<div class="login-box">
+  <div class="login-logo">
+    <a href="#"><b>KPLC</b>SPARK</a>
+  </div>
+  <!-- /.login-logo -->
+  <div class="card">
+    <div class="card-body login-card-body">
+      <p class="login-box-msg">You forgot your password? Here you can easily retrieve a new password.</p>
+
+        <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post,:role => 'login' }) do |f| %>
+           <%= devise_error_messages! %>
+
+        <div class="input-group mb-3">
+           <%= f.email_field :email,placeholder: "Email", class: "form-control", autofocus: true %>
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-envelope"></span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <%= f.submit "Request new password",:class=> "btn btn-primary btn-block" %>
+
+          </div>
+          <!-- /.col -->
+        </div>
+        <%end%>
+
+      <p class="mt-4">
+        <%= render "users/shared/links" %>
+      </p>
+      <p class="mb-0">
+        <%= flash_messages layout_flash: false %>
+      </p>
+
+    </div>
+    <!-- /.login-card-body -->
+  </div>
+</div>
+<!-- /.login-box -->
+
+</body>
+

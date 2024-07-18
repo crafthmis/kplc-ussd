@@ -1,0 +1,116 @@
+
+
+
+
+
+<body class="hold-transition login-page jumbotron">
+  <div class="login-box">
+  <div class="login-logo">
+    <a href="#"><b>KPLC</b>SPARK</a>
+  </div>
+  <!-- /.login-logo -->
+  <div class="card">
+    <div class="card-body login-card-body">
+      <p class="login-box-msg">Set your password to create profile</p>
+
+      <%= form_for resource, :as => resource_name, :url => invitation_path(resource_name), :html => { :method => :put,:role => 'login'  } do |f| %>
+            <%= f.hidden_field :invitation_token %>
+
+        <%= devise_error_messages! %>
+
+
+        <div class="input-group mb-3">
+          <%= f.email_field :email,placeholder: "Please enter your email", class: "form-control input_user", autofocus: true %>
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-envelope"></span>
+            </div>
+          </div>
+        </div>
+
+
+      <div class="input-group mb-3">
+          <%= f.text_field :first_name,placeholder: "First name", class: "form-control input_user" %>
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-user"></span>
+            </div>
+          </div>
+        </div>
+
+      <div class="input-group mb-3">
+          <%= f.text_field :last_name,placeholder: "Last name", class: "form-control input_user" %>
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-user"></span>
+            </div>
+          </div>
+        </div>
+
+       <div class="input-group mb-3">
+          <%= f.text_field :phone,placeholder: "Phone", class: "form-control input_user" %>
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-phone"></span>
+            </div>
+          </div>
+        </div>
+
+
+
+
+      <% if f.object.class.require_password_on_accepting %>
+        <div class="input-group mb-3">
+           <%= f.password_field :password, class: "form-control input_pass",:placeholder => "Password", autocomplete: "off" %>
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="input-group mb-3">
+            <%= f.password_field :password_confirmation,class: "form-control input_pass",:placeholder => "Password Confirmation", autocomplete: "off" %>          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
+            </div>
+          </div>
+        </div>
+      <%end%>
+
+
+        <div class="row">
+
+          <div class="col-8">
+           <%= f.submit t("devise.invitations.edit.submit_button"),:type => "submit",:name => "go",:class=> "btn btn-block btn-primary" %>
+          </div>
+          <!-- /.col -->
+
+      <div class="social-auth-links text-center mb-3">
+              </div>
+
+          <!-- /.col -->
+        </div>
+        <% end %>
+
+
+       <div class="social-auth-links text-center mb-3">
+        
+       <p>- OR -</p>
+      </div>
+      <!-- /.social-auth-links -->
+      <p class="mt-4">
+        <%= render "users/shared/links" %>
+      </p>
+      <p class="mb-0">
+        <%= flash_messages layout_flash: false %>
+      </p>
+
+
+
+      
+    </div>
+    <!-- /.login-card-body -->
+  </div>
+</div>
+</body>

@@ -1,0 +1,31 @@
+<div class="page-header">
+  <%= link_to new_team_sms_manager_sms_template_path class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-plus"></span>
+    New Sms template
+  <% end %>
+  <h1>Listing sms_manager_sms_templates</h1>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+            <th>Name</th>
+            <th>Message</th>
+            <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= content_tag_for(:tr, @templates) do |template| %>
+            <td><%= template.name %></td>
+            <td><%= template.message %></td>
+            <td><%= link_to 'Show', team_sms_manager_sms_template_path(@team,template) %></td>
+        <td><%= link_to 'Edit', edit_team_sms_manager_sms_template_path(@team,template) %></td>
+        <td><%= link_to 'Destroy', team_sms_manager_sms_template_path(@team,template), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </tbody>
+  </table>
+</div>

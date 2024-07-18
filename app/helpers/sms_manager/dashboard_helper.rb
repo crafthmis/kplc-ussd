@@ -1,0 +1,2 @@
+module SmsManager::DashboardHelper
+end

@@ -1,0 +1,8 @@
+/log/.bash_history
+
+.git
+.dockerignore
+.byebug_history
+log/*
+tmp/*
+

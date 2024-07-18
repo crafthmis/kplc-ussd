@@ -1,0 +1,114 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://apim.kplc.local/accounts/2.0.1/47042221/balance
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 15 Mar 2020 20:06:32 GMT
+      Server:
+      - Apache/2.4.29 (Unix) OpenSSL/1.0.2n
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, OPTIONS, HEAD,PATCH
+      X-Oracle-Dms-Ecid:
+      - 31b32aeb-f1fa-4db9-a03b-760b66db7c47-00110fea
+      X-Oracle-Dms-Rid:
+      - '0'
+      Access-Control-Allow-Headers:
+      - origin, content-type, accept, authorization
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":{"accountReference":"47042221","balance":1.33,"dueDate":1583442000000,"formatedDueDate":"2020-03-06","fullName":"ROBERT
+        JALLANG&apos;O AKELLO","lastAmount":615,"formatedBalance":"-1.33"}}'
+    http_version: null
+  recorded_at: Sun, 15 Mar 2020 21:02:26 GMT
+- request:
+    method: get
+    uri: https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic dmoyN0RoQXRNVWpQOWViUlVpZWhrakQxbU9zTVI1bTk6M3J2SXlqYUF5SmxkZk8wMg==
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 15 Mar 2020 21:02:26 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '113'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-store
+    body:
+      encoding: UTF-8
+      string: "{\n            \"access_token\": \"GE6nAKKQMWop3GIROiqcALkVrGi1\",\n
+        \           \"expires_in\": \"3599\"\n        }\n        "
+    http_version: null
+  recorded_at: Sun, 15 Mar 2020 21:02:26 GMT
+- request:
+    method: post
+    uri: https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest
+    body:
+      encoding: UTF-8
+      string: '{"BusinessShortCode":"174379","Password":"MTc0Mzc5YmZiMjc5ZjlhYTliZGJjZjE1OGU5N2RkNzFhNDY3Y2QyZTBjODkzMDU5YjEwZjc4ZTZiNzJhZGExZWQyYzkxOTIwMjAwMzE2MDAwMjI2","Timestamp":"20200316000226","TransactionType":"CustomerPayBillOnline","Amount":"400","PartyA":"254712829808","PartyB":"174379","PhoneNumber":"254712829808","CallBackURL":"https://eddd5f50.ngrok.io/api/v1/mpesa/checkout_callback","AccountReference":"47042221","TransactionDesc":"KPLC
+        USSD Pay bill"}'
+    headers:
+      Authorization:
+      - Bearer GE6nAKKQMWop3GIROiqcALkVrGi1
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 15 Mar 2020 21:02:28 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '315'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-store
+    body:
+      encoding: UTF-8
+      string: "{\n            \"MerchantRequestID\":\"9836-37434626-1\",\n            \"CheckoutRequestID\":\"ws_CO_160320200002289785\",\n
+        \           \"ResponseCode\": \"0\",\n            \"ResponseDescription\":\"Success.
+        Request accepted for processing\",\n            \"CustomerMessage\":\"Success.
+        Request accepted for processing\"\n        }\n        "
+    http_version: null
+  recorded_at: Sun, 15 Mar 2020 21:02:28 GMT
+recorded_with: VCR 5.1.0

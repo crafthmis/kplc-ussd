@@ -1,0 +1,1 @@
+PREPAID_MPESA_PR_DB = YAML.load_file(File.join(Rails.root, "config", "prepaid_mpesa_pr.yml"))[Rails.env.to_s]

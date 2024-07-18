@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://apim.kplc.local/accounts/2.0.1/1/balance
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 15 Mar 2020 10:34:58 GMT
+      Server:
+      - Apache/2.4.29 (Unix) OpenSSL/1.0.2n
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, OPTIONS, HEAD,PATCH
+      X-Oracle-Dms-Ecid:
+      - 31b32aeb-f1fa-4db9-a03b-760b66db7c47-000f11ef
+      X-Oracle-Dms-Rid:
+      - '0'
+      Access-Control-Allow-Headers:
+      - origin, content-type, accept, authorization
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":{"accountReference":"1","balance":2248681.3,"dueDate":null,"formatedDueDate":null,"fullName":"ANONIMO
+        ANONIMO ANONIMO","lastAmount":null,"formatedBalance":"-2,248,681.30"}}'
+    http_version: null
+  recorded_at: Sun, 15 Mar 2020 11:30:34 GMT
+recorded_with: VCR 5.1.0

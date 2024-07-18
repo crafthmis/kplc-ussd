@@ -1,0 +1,31 @@
+<div class="page-header">
+  <%= link_to new_team_sms_manager_contact_path(@team), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-plus"></span>
+    New Contact
+  <% end %>
+  <h1>Listing sms_manager_contacts</h1>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+            <th>Name</th>
+            <th>Number</th>
+            <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= content_tag_for(:tr, @sms_manager_contacts) do |sms_manager_contact| %>
+            <td><%= sms_manager_contact.name %></td>
+            <td><%= sms_manager_contact.number %></td>
+            <td><%= link_to 'Show', sms_manager_contact %></td>
+        <td><%= link_to 'Edit', edit_sms_manager_contact_path(sms_manager_contact) %></td>
+        <td><%= link_to 'Destroy', sms_manager_contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,1 @@
+json.partial! "sms_manager_sms_templates/sms_manager_sms_template", sms_manager_sms_template: @sms_manager_sms_template

@@ -1,0 +1,87 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://dtsvc.safaricom.com:8480/api/auth/login
+    body:
+      encoding: UTF-8
+      string: '{"username":"KPLC_API","password":"KPLC_api@2345"}'
+    headers:
+      Content-Type:
+      - application/json
+      X-Requested-With:
+      - XMLHttpRequest
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Apache-Coyote/1.1
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      X-Frame-Options:
+      - DENY
+      Content-Type:
+      - application/json;charset=ISO-8859-1
+      Content-Length:
+      - '674'
+      Date:
+      - Tue, 10 Mar 2020 22:47:59 GMT
+    body:
+      encoding: UTF-8
+      string: '{"msg":"You have been Authenticated to access this protected API System.","token":"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJLUExDX0FQSSIsImF1ZCI6IkFDQ0VTUyIsInNjb3BlcyI6IkFETUlOIiwiaXNzIjoiaHR0cDovL3NpeGRlZS5jb20iLCJpYXQiOjE1ODM4ODA0NzksImV4cCI6MTU4Mzg4NDA3OX0.xo9IfrIjLvn7PAaLheYmf5u59-qHbfo_4qMRSADDr_5T8Von8k3TiIsr_BewHV-og9CykLk4oEgX23d8Rz97Xw","refreshToken":"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJLUExDX0FQSSIsImF1ZCI6IlJFRlJFU0giLCJzY29wZXMiOiJBRE1JTiIsImlzcyI6Imh0dHA6Ly9zaXhkZWUuY29tIiwianRpIjoiMDU0YmQ2ZTktOTg5Yi00ZGI3LWFjNGYtZjUwYzY3YWE0Mzc3IiwiaWF0IjoxNTgzODgwNDc5LCJleHAiOjE1ODM4ODQ5Nzl9.aAV9M4NZn1mk-ajdXR32gPIslwT9U-k3QaHtM5Rd3x1xhB2kvzR0-L5_jII0fUfiLlr5np_qJLrrhajhd3oJEA"}'
+    http_version: null
+  recorded_at: Tue, 10 Mar 2020 22:48:00 GMT
+- request:
+    method: post
+    uri: https://dtsvc.safaricom.com:8480/api/public/SDP/sendSMSRequest
+    body:
+      encoding: UTF-8
+      string: '{"requestId":"39856","channel":"178","operation":"SendSMS","requestParam":{"data":[{"name":"LinkId","value":"0007311018784515661497991"},{"name":"Msisdn","value":"254712829808"},{"name":"OfferCode","value":"001017800186"},{"name":"Content","value":"SMS
+        format is invalid."},{"name":"CpId","value":"178"}]}}'
+    headers:
+      Content-Type:
+      - application/json
+      X-Requested-With:
+      - XMLHttpRequest
+      X-Authorization:
+      - Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJLUExDX0FQSSIsImF1ZCI6IkFDQ0VTUyIsInNjb3BlcyI6IkFETUlOIiwiaXNzIjoiaHR0cDovL3NpeGRlZS5jb20iLCJpYXQiOjE1ODM4ODA0NzksImV4cCI6MTU4Mzg4NDA3OX0.xo9IfrIjLvn7PAaLheYmf5u59-qHbfo_4qMRSADDr_5T8Von8k3TiIsr_BewHV-og9CykLk4oEgX23d8Rz97Xw
+  response:
+    status:
+      code: 403
+      message: Forbidden
+    headers:
+      Server:
+      - Apache-Coyote/1.1
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      X-Frame-Options:
+      - DENY
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Tue, 10 Mar 2020 22:47:59 GMT
+    body:
+      encoding: UTF-8
+      string: '{"timestamp":1583880480789,"status":403,"error":"Forbidden","message":"API
+        sendSMSRequest Not Allowed for User with IP 196.109.5.81"}'
+    http_version: null
+  recorded_at: Tue, 10 Mar 2020 22:48:00 GMT
+recorded_with: VCR 5.1.0

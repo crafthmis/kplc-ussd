@@ -1,0 +1,2 @@
+module ApplicationAnalytics::AdminHelper
+end

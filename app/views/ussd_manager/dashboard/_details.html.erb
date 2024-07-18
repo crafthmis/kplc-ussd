@@ -1,0 +1,31 @@
+   <div class="col-12 col-md-12 col-lg-4 order-1 order-md-2">
+              <h3 class="text-primary"><i class="far fa-comments"></i></i>File Complaints</h3>
+              <p class="text-muted"> This is a USSD option used by customers to report high bills, faulty meters and staff misconduct</p>
+              <br>
+
+              <div class="text-muted">
+                <p class="text-sm">Project Name
+                  <b class="d-block"><%= current_team.name %></b>
+                </p>
+                <p class="text-sm">Project Owner
+                  <b class="d-block"><%= current_team.owner.email %></b>
+                </p>
+              </div>
+
+
+
+
+               <div class="text-center mt-5 mb-3">
+
+                <%= link_to root_path, class: 'btn btn-sm btn-info' do %>
+                    Enter Workspace
+                <% end %>
+
+            </div>
+       </div>
+
+
+
+
+
+

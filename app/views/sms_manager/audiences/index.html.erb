@@ -1,0 +1,78 @@
+    <!-- Default box -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Audiences</h3>
+
+          <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+              <i class="fas fa-minus"></i></button>
+            <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
+              <i class="fas fa-times"></i></button>
+          </div>
+        </div>
+        <div class="card-body p-0">
+          <table class="table table-striped projects">
+              <thead>
+                  <tr>
+                      <th style="width: 1%">
+                          #
+                      </th>
+                      <th style="width: 20%">
+                          Audience Name
+                      </th>
+                      <th style="width: 30%">
+                          Subscribers
+                      </th>
+                                        <th style="width: 20%">
+                      </th>
+                  </tr>
+              </thead>
+              <tbody>
+                 <%= content_tag_for(:tr, @audiences) do |audience| %>
+                  <tr>
+                      <td>
+                          #
+                      </td>
+                      <td>
+                          <a>
+                              <%= audience.name %>
+                          </a>
+                          <br/>
+                          <small>
+                              Created <%= time_ago_in_words(audience.created_at) %>
+                          </small>
+                      </td>
+                      <td>
+                          <ul class="list-inline">
+                              <li class="list-inline-item">
+                                <%=image_tag("avatar.png",alt: "Avatar", class: "table-avatar") %>
+                              </li>
+                             <%= audience.subscribers.size %>
+                          </ul>
+                      </td>
+                   
+                      <td class="project-actions text-right">
+                        <%= link_to team_sms_manager_audience_path(current_team,audience),class: "btn btn-primary btn-sm" do %>
+                              <i class="fas fa-folder">
+                              </i>
+                              View
+                        <%end%>
+                        <%= link_to edit_team_sms_manager_audience_path(current_team,audience) ,class: "btn btn-info btn-sm" do %>
+                             <i class="fas fa-pencil-alt">
+                              </i>
+                              Edit
+                        <%end%>
+
+                        <%= link_to team_sms_manager_audience_path(current_team,audience) ,class: "btn btn-danger btn-sm" , method: :delete, data: { confirm: 'Are you sure?' } do %>
+                               <i class="fas fa-trash">
+                              </i>
+                              Delete
+                        <%end%>
+                      </td>
+                  </tr>
+                   <% end %>
+                </tbody>
+          </table>
+        </div>
+        <!-- /.card-body -->
+      </div>

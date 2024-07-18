@@ -1,0 +1,140 @@
+<div class="container">
+
+
+
+
+
+    <!-- Default box -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Complaints</h3>
+
+          <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+              <i class="fas fa-minus"></i></button>
+            <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
+              <i class="fas fa-times"></i></button>
+          </div>
+        </div>
+        <div class="card-body p-0">
+          <table class="table table-striped projects">
+              <thead>
+                  <tr>
+                      <th style="width: 1%">
+                          #
+                      </th>
+                      <th style="width: 30%">
+                          Number
+                      </th>
+                      <th style="width: 20%">
+                          Type
+                      </th>
+                       <th style="width: 20%">
+                          Info
+                      </th>
+
+
+                       <th style="width: 30%">
+                      </th>
+                  </tr>
+              </thead>
+              <tbody>
+                 <%= content_tag_for(:tr, @complaints) do |complaint| %>
+                  <tr>
+                      <td>
+                          #
+                      </td>
+                      <td>
+
+                        <ul class="list-inline">
+                              <li class="list-inline-item">
+                                <%=image_tag("avatar.png",alt: "Avatar", class: "table-avatar") %>
+                              </li>
+
+                                <a>
+                                    <%= complaint.customer.number %></br>
+                             
+
+                          <small>
+                              Created <%= time_ago_in_words(complaint.created_at) %>
+                          </small>    </a>
+                           
+                          </ul>
+
+                        
+
+
+
+                      </td>
+                      <td>
+
+                            <%if complaint.complaintable_type == "Accountment"%>
+                              Postpaid
+
+                            <%elsif complaint.complaintable_type == "Meterization" %>
+                              Prepaid
+
+                            <%else%>
+                              Employee
+
+                            <%end%>
+                      </td>
+
+                      <td>
+                        <% if complaint.complaintable_type == "Employee" %>
+                          <% selected = Complaint::CORRUPTION[complaint.info.to_sym] %>
+                          <% if selected %>
+                            <%= selected %>
+                          <%else%>
+                            <%= complaint.info %>
+                          <%end%>
+                        <%else%>
+                          <%= complaint.info %>
+                        <%end%>
+
+                        
+                          
+
+                      </td>
+                   
+                      <td class="project-actions text-right">
+
+                   <% if complaint.complaintable_type == "Employee" %>
+                                 
+                        <%= link_to resolve_team_ussd_manager_complaint_path(current_team,complaint) ,class: "btn btn-danger btn-sm" , data: { confirm: 'Are you sure?' } do %>
+                               <i class="fas fa-trash">
+                              </i>
+                           Mark As Resolved
+                        <%end%>
+
+                    <%else%>
+
+
+                                 
+                        <%= link_to resolve_team_ussd_manager_complaint_path(current_team,complaint) ,class: "btn btn-danger btn-sm" , data: { confirm: 'Are you sure?' } do %>
+                               <i class="fas fa-trash">
+                              </i>
+                              create An RCCS 
+                        <%end%>
+
+
+
+                     <%end%>
+
+
+                      </td>
+                  </tr>
+                   <% end %>
+                </tbody>
+
+                <%= paginate @complaints %>
+          </table>
+
+        </div>
+        <!-- /.card-body -->
+      </div>
+
+
+</div>
+
+

@@ -1,0 +1,39 @@
+   <div class="col-12 col-md-12 col-lg-4 order-1 order-md-2">
+              <h3 class="text-primary"><i class="far fa-comments"></i></i>Welcome to Account Manager!</h3>
+              <p class="text-muted">SMS Manager is an All-In-One integrated SMS and marketing platform for Kenya Power teams, It's easy to use <%#= project.description %></p>
+              <br>
+
+              <div class="text-muted">
+                <p class="text-sm">Client Company
+                  <b class="d-block"></b>
+                </p>
+                <p class="text-sm">Project Leader
+                  <b class="d-block"></b>
+                </p>
+              </div>
+
+           <h5 class="mt-5 text-muted">Current Interfaces</h5>
+              <ul class="list-unstyled">
+                 <%= content_tag_for(:tr, @interfaces) do |interface| %>
+                    <li>
+                      <a href="" class="btn-link text-secondary"><i class="far fa-comments"></i><%=interface.name%></a>
+                    </li>
+                 <%end%>
+           </ul>
+
+
+
+               <div class="text-center mt-5 mb-3">
+                 <%= link_to organization_teams_path(current_organization), class: 'btn btn-sm btn-primary' do %>
+                    View Teams
+                  <% end %>
+                  <%= link_to edit_organization_path(current_organization), class: 'btn btn-sm btn-warning' do %>
+                    Customize Account
+                  <% end %>
+            </div>
+       </div>
+
+
+
+
+    

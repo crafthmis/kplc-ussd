@@ -1,0 +1,2 @@
+module Money::DashboardHelper
+end

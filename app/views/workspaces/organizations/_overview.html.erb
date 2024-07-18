@@ -1,0 +1,33 @@
+<div class="row">
+
+                <% if @interfaces.empty?  %>
+                <p>No application interfaces</p>
+
+
+
+                <%else%>
+                 <%= content_tag_for(:tr, @interfaces) do |interface| %>
+                    <div class="col-12 col-sm-4">
+                          <div class="info-box bg-light">
+                            <div class="info-box-content">
+                              <%= link_to interface do %>
+
+                              <span class="info-box-text text-center text-muted"><%= interface.name %></span>
+                                 <div class="row">
+                                    <div class="col-6">
+                                      <span class="badge badge-danger">Teams <%#= campaign.failed_contacts.size %></span>
+                                      
+                                    </div>
+                               
+                                    <div class="col-6">
+                                      <span class="badge badge-success">Teams <%#= campaign.broadcast_contacts.size %></span>
+                                     </div>
+                                  </div>
+                               <%end%>
+
+                            </div>
+                          </div>
+                    </div>
+                <% end %>
+                <%end%>
+              </div>

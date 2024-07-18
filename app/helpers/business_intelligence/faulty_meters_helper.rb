@@ -1,0 +1,2 @@
+module BusinessIntelligence::FaultyMetersHelper
+end

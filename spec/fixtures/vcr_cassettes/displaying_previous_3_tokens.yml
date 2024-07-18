@@ -1,0 +1,46 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://incms.kplc.local/InCMS-ss-server/services/publicData/?serialNumberMeter=14243784684
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 28 Feb 2020 12:11:07 GMT
+      Server:
+      - Apache/2.4.29 (Unix) OpenSSL/1.0.2n
+      Content-Length:
+      - '7612'
+      X-Oracle-Dms-Ecid:
+      - 24fbc6bb-3742-4d60-89eb-2d784717a646-00237f82
+      Access-Control-Allow-Headers:
+      - origin, content-type, accept, authorization
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, OPTIONS, HEAD,PATCH
+      Access-Control-Allow-Credentials:
+      - 'true'
+      X-Oracle-Dms-Rid:
+      - '0'
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"data":{"accountReference":null,"fullName":"FRANCIS GITAU MUTHIORA","idService":1027846,"idPaymentForm":1866481,"colPrepayment":[{"servicePointNo":"6098942A0|AR011|2156","trnTimestamp":1582758868000,"tokenNo":"48733723248670831203","accountNumber":"3090509-6098942-S1","custName":"3090509-6098942-S1","customerNumber":"3090509-6098942-S1","transactionId":0,"recptNo":null,"msno":"14243784684","pMethod":"KPLC;KPLCSMS4","debtRefNo":null,"codUnicom":2156,"trnUnits":0.07,"trnAmount":1,"coConcepto":null},{"servicePointNo":"6098942A0|AR011|2156","trnTimestamp":1582758237000,"tokenNo":"35213959753515694523","accountNumber":"3090509-6098942-S1","custName":"3090509-6098942-S1","customerNumber":"3090509-6098942-S1","transactionId":0,"recptNo":null,"msno":"14243784684","pMethod":"KPLC;KPLCSMS4","debtRefNo":null,"codUnicom":2156,"trnUnits":0.07,"trnAmount":1,"coConcepto":null},{"servicePointNo":"6098942A0|AR011|2156","trnTimestamp":1582757903000,"tokenNo":"48359472762309551108","accountNumber":"3090509-6098942-S1","custName":"3090509-6098942-S1","customerNumber":"3090509-6098942-S1","transactionId":0,"recptNo":null,"msno":"14243784684","pMethod":"KPLC;KPLCSMS4","debtRefNo":null,"codUnicom":2156,"trnUnits":0.07,"trnAmount":1,"coConcepto":null},{"servicePointNo":"6098942A0|AR011|2156","trnTimestamp":1582754294000,"tokenNo":"60270397629680007218","accountNumber":"3090509-6098942-S1","custName":"3090509-6098942-S1","customerNumber":"3090509-6098942-S1","transactionId":0,"recptNo":null,"msno":"14243784684","pMethod":"KPLC;KPLCSMS4","debtRefNo":null,"codUnicom":2156,"trnUnits":0.07,"trnAmount":1,"coConcepto":null},{"servicePointNo":"6098942A0|AR011|2156","trnTimestamp":1582224854000,"tokenNo":"42388744526447427861","accountNumber":"3090509-6098942-S1","custName":"3090509-6098942-S1","customerNumber":"3090509-6098942-S1","transactionId":0,"recptNo":null,"msno":"14243784684","pMethod":"KPLC;KPLCSMS4","debtRefNo":null,"codUnicom":2156,"trnUnits":0.07,"trnAmount":1,"coConcepto":null},{"servicePointNo":"6098942A0|AR011|2156","trnTimestamp":1582160745000,"tokenNo":"59057784910635493402","accountNumber":"3090509-6098942-S1","custName":"3090509-6098942-S1","customerNumber":"3090509-6098942-S1","transactionId":0,"recptNo":null,"msno":"14243784684","pMethod":"KPLC;KPLCSMS4","debtRefNo":null,"codUnicom":2156,"trnUnits":0.07,"trnAmount":1,"coConcepto":null},{"servicePointNo":"6098942A0|AR011|2156","trnTimestamp":1582145017000,"tokenNo":"57688607431490279590","accountNumber":"3090509-6098942-S1","custName":"3090509-6098942-S1","customerNumber":"3090509-6098942-S1","transactionId":0,"recptNo":null,"msno":"14243784684","pMethod":"KPLC;KPLCSMS4","debtRefNo":null,"codUnicom":2156,"trnUnits":0.07,"trnAmount":1,"coConcepto":null},{"servicePointNo":"6098942A0|AR011|2156","trnTimestamp":1582143307000,"tokenNo":"38877999938967536748","accountNumber":"3090509-6098942-S1","custName":"3090509-6098942-S1","customerNumber":"3090509-6098942-S1","transactionId":0,"recptNo":null,"msno":"14243784684","pMethod":"KPLC;KPLCSMS4","debtRefNo":null,"codUnicom":2156,"trnUnits":0.07,"trnAmount":1,"coConcepto":null},{"servicePointNo":"6098942A0|AR011|2156","trnTimestamp":1580296515000,"tokenNo":"62117814374238643204","accountNumber":"3090509-6098942-S1","custName":"3090509-6098942-S1","customerNumber":"3090509-6098942-S1","transactionId":0,"recptNo":null,"msno":"14243784684","pMethod":"KPLC;KPLCSMS4","debtRefNo":null,"codUnicom":2156,"trnUnits":32.5,"trnAmount":500,"coConcepto":null},{"servicePointNo":"6098942A0|AR011|2156","trnTimestamp":1578513986000,"tokenNo":"28827992742067636454","accountNumber":"3090509-6098942-S1","custName":"3090509-6098942-S1","customerNumber":"3090509-6098942-S1","transactionId":0,"recptNo":null,"msno":"14243784684","pMethod":"KPLC;KPLCSMS4","debtRefNo":null,"codUnicom":2156,"trnUnits":32.15,"trnAmount":500,"coConcepto":null},{"servicePointNo":"6098942A0|AR011|2156","trnTimestamp":1574162200000,"tokenNo":"32647251967088585781","accountNumber":"3090509-6098942-S1","custName":"3090509-6098942-S1","customerNumber":"3090509-6098942-S1","transactionId":0,"recptNo":null,"msno":"14243784684","pMethod":"pdsl;retail1","debtRefNo":null,"codUnicom":2156,"trnUnits":6.22,"trnAmount":100,"coConcepto":null},{"servicePointNo":"6098942A0|AR011|2156","trnTimestamp":1564438823000,"tokenNo":"27175729179532079610","accountNumber":"3090509-6098942-S1","custName":"3090509-6098942-S1","customerNumber":"3090509-6098942-S1","transactionId":0,"recptNo":null,"msno":"14243784684","pMethod":"KPLC;KPLCSMS4","debtRefNo":null,"codUnicom":2156,"trnUnits":47.77,"trnAmount":800,"coConcepto":null},{"servicePointNo":"6098942A0|AR011|2156","trnTimestamp":1552605885000,"tokenNo":"14627862036039469619","accountNumber":"3090509-6098942-S1","custName":"3090509-6098942-S1","customerNumber":"3090509-6098942-S1","transactionId":0,"recptNo":null,"msno":"14243784684","pMethod":"KPLC;00001","debtRefNo":null,"codUnicom":2156,"trnUnits":32.13,"trnAmount":500,"coConcepto":null},{"servicePointNo":"6098942A0|AR011|2156","trnTimestamp":1543189226000,"tokenNo":"03097387840843221997","accountNumber":"3090509-6098942-S1","custName":"3090509-6098942-S1","customerNumber":"3090509-6098942-S1","transactionId":0,"recptNo":null,"msno":"14243784684","pMethod":"KPLC;00001","debtRefNo":null,"codUnicom":2156,"trnUnits":33,"trnAmount":500,"coConcepto":null},{"servicePointNo":"6098942A0|AR011|2156","trnTimestamp":1540092092000,"tokenNo":"23816847804591322334","accountNumber":"3090509-6098942-S1","custName":"3090509-6098942-S1","customerNumber":"3090509-6098942-S1","transactionId":0,"recptNo":null,"msno":"14243784684","pMethod":"KPLC;00001","debtRefNo":null,"codUnicom":2156,"trnUnits":22.62,"trnAmount":500,"coConcepto":null},{"servicePointNo":"6098942A0|AR011|2156","trnTimestamp":1540029730000,"tokenNo":"33576907161299497039","accountNumber":"3090509-6098942-S1","custName":"3090509-6098942-S1","customerNumber":"3090509-6098942-S1","transactionId":0,"recptNo":null,"msno":"14243784684","pMethod":"KPLC;00001","debtRefNo":null,"codUnicom":2156,"trnUnits":5.88,"trnAmount":130,"coConcepto":null},{"servicePointNo":"6098942A0|AR011|2156","trnTimestamp":1538607214000,"tokenNo":"43075032447455534382","accountNumber":"3090509-6098942-S1","custName":"3090509-6098942-S1","customerNumber":"3090509-6098942-S1","transactionId":0,"recptNo":null,"msno":"14243784684","pMethod":"KPLC;00001","debtRefNo":null,"codUnicom":2156,"trnUnits":9.02,"trnAmount":200,"coConcepto":null},{"servicePointNo":"6098942A0|AR011|2156","trnTimestamp":1537133653000,"tokenNo":"15195495146637177649","accountNumber":"3090509-6098942-S1","custName":"3090509-6098942-S1","customerNumber":"3090509-6098942-S1","transactionId":0,"recptNo":null,"msno":"14243784684","pMethod":"KPLC;00001","debtRefNo":null,"codUnicom":2156,"trnUnits":9.02,"trnAmount":200,"coConcepto":null},{"servicePointNo":"6098942A0|AR011|2156","trnTimestamp":1534801052000,"tokenNo":"70584503843619342217","accountNumber":"3090509-6098942-S1","custName":"3090509-6098942-S1","customerNumber":"3090509-6098942-S1","transactionId":0,"recptNo":null,"msno":"14243784684","pMethod":"KPLC;00001","debtRefNo":null,"codUnicom":2156,"trnUnits":18.03,"trnAmount":400,"coConcepto":null},{"servicePointNo":"6098942A0|AR011|2156","trnTimestamp":1532647263000,"tokenNo":"54266568021161303200","accountNumber":"3090509-6098942-S1","custName":"3090509-6098942-S1","customerNumber":"3090509-6098942-S1","transactionId":0,"recptNo":null,"msno":"14243784684","pMethod":"KPLC;00001","debtRefNo":null,"codUnicom":2156,"trnUnits":26.7,"trnAmount":800,"coConcepto":null}],"prepayment":true}}'
+    http_version: null
+  recorded_at: Fri, 28 Feb 2020 12:10:44 GMT
+recorded_with: VCR 5.1.0

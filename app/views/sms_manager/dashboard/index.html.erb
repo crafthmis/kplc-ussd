@@ -1,0 +1,74 @@
+
+    <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Workspace Details</h3>
+
+          <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+              <i class="fas fa-minus"></i></button>
+            <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
+              <i class="fas fa-times"></i></button>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-12 col-md-12 col-lg-8 order-2 order-md-1">
+              <div class="row">
+
+                <% if @campaigns.empty?  %>
+                <p>No campaings yet</p>
+
+
+
+                <%else%>
+                 <%= content_tag_for(:tr, @campaigns) do |campaign| %>
+                    <div class="col-12 col-sm-4">
+                          <div class="info-box bg-light">
+                            <div class="info-box-content">
+                              <%= link_to team_sms_manager_campaign_path(current_team,campaign) do %>  <!--[:sms_manager,campaign]-->
+<!--sti_campaign_path(@campaign.type ,@campaign, :edit),-->
+                              
+
+                              <span class="info-box-text text-center text-muted"><%= campaign.name %></span>
+                                 <div class="row">
+                                    <div class="col-6">
+                                      <span class="badge badge-danger">Failed <%= campaign.failed_contacts.size %></span>
+                                      
+                                    </div>
+                               
+                                    <div class="col-6">
+                                      <span class="badge badge-success">Total <%= campaign.broadcast_contacts.size %></span>
+                                     </div>
+                                  </div>
+                               <%end%>
+
+                            </div>
+                          </div>
+                        </div>
+                <% end %>
+                <%end%>
+
+
+              </div>
+        </div>
+            <div class="col-12 col-md-12 col-lg-4 order-1 order-md-2">
+              <h3 class="text-primary">
+                <i class="far fa-comments"></i>
+              </i>Welcome to SMS Manager!</h3>
+              <p class="text-muted">SMS Manager is an All-In-One integrated SMS and marketing platform for Kenya Power teams, It's easy to use <%#= project.description %></p>
+              <br>
+        
+         
+
+              <div class="text-center mt-5 mb-3">
+                <%= link_to 'Create Campaign', new_team_sms_manager_campaign_path ,class: "btn btn-sm btn-primary" %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /.card-body -->
+      </div>
+
+
+
+

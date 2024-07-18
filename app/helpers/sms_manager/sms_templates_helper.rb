@@ -1,0 +1,2 @@
+module SmsManager::SmsTemplatesHelper
+end

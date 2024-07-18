@@ -1,0 +1,48 @@
+   <div class="col-12 col-md-12 col-lg-4 order-1 order-md-2">
+              <h3 class="text-primary"><i class="far fa-comments"></i></i>Campaign Message</h3>
+              <p class="text-muted"> <%= @campaign.message %></p>
+              <br>
+
+              <div class="text-muted">
+                <p class="text-sm">Campaign Name
+                  <b class="d-block"><%= @campaign.name %></b>
+                </p>
+                <p class="text-sm">Created by
+                  <b class="d-block"><%= @campaign.user.email %></b>
+                </p>
+
+
+               <p class="text-sm">Created on
+                  <b class="d-block"><%= time_ago_in_words @campaign.created_at %> ago</b>
+                </p>
+
+
+              <p class="text-sm">Campaign Status
+                  <b class="d-block"><%= @campaign.status %></b>
+                </p>
+                <p class="text-sm">Team
+                  <b class="d-block"><%= @campaign.team.name%></b>
+                </p>
+
+
+
+              <p class="text-sm">Account
+                  <b class="d-block"><%= @campaign.organization.name %></b>
+                </p>
+                <p class="text-sm">Audience
+                  <b class="d-block"><%= @campaign.audience.name%></b>
+                </p>
+
+              </div>
+
+
+
+               <div class="text-center mt-5 mb-3">
+                 <%= link_to team_sms_manager_campaigns_path(@team), class: 'btn btn-sm btn-info' do %>
+                   View All Campaigns
+                  <% end %>
+
+
+            </div>
+       </div>
+

@@ -1,0 +1,29 @@
+      <li class="nav-item has-treeview">
+        <a href="#" class="nav-link">
+         <i class="nav-icon fas fa-tachometer-alt"></i>
+          <p>
+            Prepaid
+            <i class="right fas fa-angle-left"></i>
+          </p>
+        </a>
+        <ul class="nav nav-treeview">
+
+          <li class="nav-item">
+             <%= link_to money_prepaid_safaricom_path ,class: "nav-link #{params['controller'] == "settings" ? 'active' : ''}" do %>
+               <i class="nav-icon fas fa-tachometer-alt"></i>
+                Safaricom
+              <%end%>
+          </li>
+          <li class="nav-item">
+              <%= link_to money_prepaid_airtell_path ,class: "nav-link #{params['controller'] == "settings" ? 'active' : ''}" do %>
+               <i class="nav-icon fas fa-tachometer-alt"></i>
+                Airtell
+             <%end%>
+          </li>
+
+          
+        </ul>
+      </li>
+
+
+

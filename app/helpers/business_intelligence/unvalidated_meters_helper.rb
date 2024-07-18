@@ -1,0 +1,2 @@
+module BusinessIntelligence::UnvalidatedMetersHelper
+end

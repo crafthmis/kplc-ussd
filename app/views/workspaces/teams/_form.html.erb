@@ -1,0 +1,136 @@
+
+
+
+
+<%= form_for([@organization,@team], html: { class: "form-horizontal", role: "form" }) do |f| %>
+
+
+ <div class="row">
+        <div class="col-md-5">
+          <div class="card card-primary">
+            <div class="card-header">
+              <h3 class="card-title">General</h3>
+
+              <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                  <i class="fas fa-minus"></i></button>
+              </div>
+            </div>
+            <div class="card-body">
+  
+
+            <% if @team.errors.any? %>
+              <div class="alert alert-danger alert-dismissable" role="alert">
+                <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4><%= pluralize(@team.errors.count, "error") %> prohibited this team from being saved:</h4>
+
+                <ul>
+                <% @team.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+                <% end %>
+                </ul>
+              </div>
+            <% end %>
+
+
+
+
+              <div class="form-group">
+                <label for="inputName">Team Name</label>
+                <%= f.text_field :name, class: "form-control" %>
+              </div>
+
+             <div class="form-group">
+                <label for="inputDescription">Team Description</label>
+                <%= f.text_area :description, class: "form-control",rows: 4 %>
+
+                <%= f.hidden_field :organization_id,value: @organization.id %>
+                <%= f.hidden_field :owner_id, value: current_user.id %>
+
+              </div>
+
+
+           <%= f.nested_fields_for :team_interfaces do |ff| %>
+                      
+                <div class="form-group">
+                  <label for="inputClientCompany">Interfaces</label>
+                  <%= ff.select(:organization_interface_id, OrganizationInterface.all.collect { |p| [ p.name, p.id ] }, { prompt: 'Select Interface' },{ class: 'form-control' })%>
+                  <%= ff.hidden_field :organization_id ,value: @organization.id %>
+                </div>
+
+              <span class="float-right">
+                 <%= ff.remove_nested_fields_link do %>
+                      Remove Interface
+                 <%end%>
+                   
+                 </span>
+             <%end%>
+             <%= f.add_nested_fields_link :team_interfaces, "Add Interface" %>
+
+                   
+             </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+        </div>
+        <div class="col-md-7">
+          <div class="card card-info">
+            <div class="card-header">
+              <h3 class="card-title">Team Members</h3>
+
+              <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                  <i class="fas fa-minus"></i></button>
+              </div>
+            </div>
+            <div class="card-body">
+             <%= f.nested_fields_for :users do |ff| %>
+
+             <div class="row">
+
+             <div class="col-md-8">
+               <div class="form-group">
+                 <label>Email</label>
+                 <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                    </div>
+                    <%= ff.email_field :email , class: "form-control"%>
+                  </div>
+
+                    <%= ff.hidden_field :organization_id ,value: @organization.id %>
+                </div>
+              </div>
+
+               <div class="col-md-4">
+                  <div class="form-group">
+                      <label>Admin</label>
+                      <%= ff.select :admin, options_for_select([['No', false],['Yes', true]]),{},{class: "form-control"}%> 
+                  </div>
+                </div>
+             </div>      
+              <span class="float-right">
+                 <%= ff.remove_nested_fields_link do %>
+                      Remove Member 
+                 <%end%>
+              </span>
+
+
+             <%end%>
+             <%= f.add_nested_fields_link :users, "Add Member" %>
+
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+        </div>
+      </div>
+
+
+    <div class="row">
+        <div class="col-12">
+            <%= f.submit class: "btn btn-success float-right" %>
+        </div>
+      </div>
+
+<% end %>

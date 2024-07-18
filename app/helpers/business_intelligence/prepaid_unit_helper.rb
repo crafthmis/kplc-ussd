@@ -1,0 +1,2 @@
+module BusinessIntelligence::PrepaidUnitHelper
+end

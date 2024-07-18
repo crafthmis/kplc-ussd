@@ -1,0 +1,2 @@
+module BusinessIntelligence::SalesHelper
+end

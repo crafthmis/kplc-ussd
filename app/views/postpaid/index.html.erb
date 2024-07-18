@@ -1,0 +1,123 @@
+<% @minititle = "Analytics Dashboard" %>
+
+<div class="row">
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="card card-stats">
+              <div class="card-body ">
+                <div class="row">
+                  <div class="col-5 col-md-4">
+                    <div class="icon-big text-center icon-warning">
+                      <i class="nc-icon nc-paper text-warning"></i>
+                    </div>
+                  </div>
+                  <div class="col-7 col-md-8">
+                    <div class="numbers">
+                      <p class="card-category">My Bill</p>
+                      <p class="card-title"><%= @my_bill.size %><p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+                        </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="card card-stats">
+              <div class="card-body ">
+                <div class="row">
+                  <div class="col-5 col-md-4">
+                    <div class="icon-big text-center icon-warning">
+                      <i class="nc-icon nc-money-coins text-success"></i>
+                    </div>
+                  </div>
+                  <div class="col-7 col-md-8">
+                    <div class="numbers">
+                      <p class="card-category">Pay Bill</p>
+                      <p class="card-title"><%= @pay_bill.size %><p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+             
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="card card-stats">
+              <div class="card-body ">
+                <div class="row">
+                  <div class="col-5 col-md-4">
+                    <div class="icon-big text-center icon-warning">
+                      <i class="nc-icon nc-bell-55 text-danger"></i>
+                    </div>
+                  </div>
+                  <div class="col-7 col-md-8">
+                    <div class="numbers">
+                      <p class="card-category">Bill Alerts</p>
+                      <p class="card-title"><%= @bill_alerts.size %><p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+             
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="card card-stats">
+              <div class="card-body ">
+                <div class="row">
+                  <div class="col-5 col-md-4">
+                    <div class="icon-big text-center icon-warning">
+                      <i class="nc-icon nc-watch-time text-primary"></i>
+                    </div>
+                  </div>
+                  <div class="col-7 col-md-8">
+                    <div class="numbers">
+                      <p class="card-category">Self Reading</p>
+                      <p class="card-title"><%= @self_reading.size %><p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+             
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card ">
+              <div class="card-header ">
+                <h5 class="card-title">Unique Requests</h5>
+              </div>
+
+              <%= content_tag :div, "",id: "postpaid_labels",data: {requests: postpaid_by_hour(@postpaid,@my_bill,@pay_bill,@bill_alerts,@self_reading)} %>
+              <div class="card-body ">
+                <div id="request_charts"></div>
+              </div>
+           
+            </div>
+          </div>
+        </div>
+ 
+<!--
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card ">
+              <div class="card-header ">
+                <h5 class="card-title">New Users Vs Unique Requests</h5>
+              </div>
+
+              <%#= content_tag :div, "",id: "daily_labels",data: {daily: request_chart_data(@request_chart,@customer_chart)  } %>
+              
+              <div class="card-body ">
+                <div id="daily_requests"></div>
+              </div>
+         
+            </div>
+          </div> -->
+       
+          
+
+        </div>
+
+
+
+

@@ -1,0 +1,1 @@
+INCMS_PR_DB = YAML.load_file(File.join(Rails.root, "config", "incms_pr_db.yml"))[Rails.env.to_s]
